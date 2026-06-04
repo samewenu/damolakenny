@@ -467,6 +467,7 @@ body.light-theme .sun-icon { display: none; }
     border-top: 1px solid var(--border-color);
     padding-top: 28px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .metric-card {
@@ -748,7 +749,7 @@ body.light-theme .sun-icon { display: none; }
 
 .skills-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 32px;
 }
 
@@ -866,7 +867,7 @@ body.light-theme .sun-icon { display: none; }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 32px;
 }
 
@@ -994,7 +995,7 @@ body.light-theme .sun-icon { display: none; }
 
 .stack-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 28px;
 }
 
@@ -1741,6 +1742,21 @@ body.light-theme .sun-icon { display: none; }
     
     .navbar-wrapper {
         top: 35px;
+    }
+
+    .hero-metrics {
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .metric-divider {
+        display: none;
+    }
+
+    .metric-card {
+        align-items: center;
+        text-align: center;
+        min-width: 120px;
     }
 
     .nav-menu {
