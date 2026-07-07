@@ -242,7 +242,8 @@ body.menu-open .icon-bars { display: none; }
 .marquee-tools .marquee-set { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); gap: 32px; padding-right: 32px; }
 
 /* --- Work gallery --- */
-.filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; scrollbar-width: none; }
+.filter-row::-webkit-scrollbar { display: none; }
 .filter-chip {
     padding: 10px 22px; border: 1px solid var(--hairline); border-radius: var(--pill-radius);
     font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);
