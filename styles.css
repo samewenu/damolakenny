@@ -213,3 +213,20 @@ body.menu-open .icon-bars { display: none; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* --- Services --- */
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card { padding: 32px; display: flex; flex-direction: column; gap: 16px; transition: border-color 0.3s var(--ease); }
+.service-card:hover { border-color: var(--accent); }
+.service-num { font-family: var(--font-head); font-weight: 700; color: var(--accent-text); font-size: 0.9rem; }
+.service-card h3 { font-size: 1.25rem; }
+.service-card .tag-row { margin-top: auto; }
+.skills-list { margin-top: clamp(40px, 6vw, 64px); }
+.skill-row {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding: 18px 0; border-bottom: 1px solid var(--hairline);
+}
+.skill-row:first-of-type { border-top: 1px solid var(--hairline); }
+.skill-name { font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 1rem; }
+.skill-tools { color: var(--text-secondary); font-size: 0.85rem; }
+.marquee-tools .marquee-set { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); gap: 32px; padding-right: 32px; }
