@@ -5,6 +5,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     initAuditLogs();
     initTheme();
+    initMenu();
+    initStickyNav();
 });
 
 /* --- Safe storage (degrades in private browsing) --- */
@@ -57,4 +59,30 @@ function initTheme() {
         storageSet('portfolio-theme', next);
         logAuditEvent('Theme Toggle', 'Changed theme to: ' + next, 'User', 'SUCCESS');
     });
+}
+
+/* --- Mobile overlay menu --- */
+function initMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => {
+        const open = navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+/* --- Sticky nav hairline --- */
+function initStickyNav() {
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 }

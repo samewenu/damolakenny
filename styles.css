@@ -99,3 +99,79 @@ h1, h2, h3, h4, h5 { color: var(--text-primary); }
 }
 
 /* ===== SECTIONS (Tasks 2–8 append below) ===== */
+
+/* --- Skip link --- */
+.skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--accent); color: var(--pill-ink); padding: 10px 20px;
+}
+.skip-link:focus { left: 0; }
+
+/* --- Nav --- */
+.navbar-wrapper {
+    position: sticky; top: 0; z-index: 80;
+    background: var(--bg-main);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s var(--ease), background 0.4s var(--ease);
+}
+.navbar-wrapper.scrolled { border-bottom-color: var(--hairline); }
+.navbar { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.nav-logo, .footer-logotype {
+    font-family: var(--font-head); font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em;
+}
+.nav-logo { font-size: 1.2rem; }
+.logo-italic { font-family: var(--font-accent); font-style: italic; font-weight: 600; text-transform: lowercase; }
+.nav-list { display: flex; gap: 36px; }
+.nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s var(--ease); }
+.nav-link:hover { color: var(--text-primary); }
+.nav-actions { display: flex; align-items: center; gap: 14px; }
+.nav-cta { padding: 10px 22px; }
+.theme-toggle, .menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border: 1px solid var(--hairline); border-radius: var(--pill-radius);
+    transition: border-color 0.3s var(--ease);
+}
+.theme-toggle:hover, .menu-toggle:hover { border-color: var(--accent); }
+body.dark-theme .icon-moon { display: none; }
+body.light-theme .icon-sun { display: none; }
+.menu-toggle { display: none; }
+.icon-close { display: none; }
+body.menu-open .icon-close { display: block; }
+body.menu-open .icon-bars { display: none; }
+
+@media (max-width: 1024px) {
+    .nav-list {
+        position: fixed; inset: 0; z-index: 90;
+        display: none; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+        background: var(--bg-main); font-size: 1.4rem;
+    }
+    .nav-list.active { display: flex; }
+    .menu-toggle { display: inline-flex; position: relative; z-index: 100; }
+    .nav-cta { display: none; }
+}
+
+/* --- Footer (gold block, fixed ink both themes) --- */
+.footer { background: var(--accent); color: #121210; overflow: hidden; }
+.footer h5, .footer p, .footer a, .footer li { color: #121210; }
+.footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+    padding-top: clamp(56px, 8vw, 96px); padding-bottom: 48px;
+}
+.footer-title { font-size: clamp(1.5rem, 2.6vw, 2.2rem); margin-bottom: 24px; max-width: 16ch; }
+.footer-col h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 16px; }
+.footer-col li { margin-bottom: 10px; font-size: 0.9rem; }
+.footer-col a:hover { text-decoration: underline; }
+.footer-socials { display: flex; gap: 14px; margin-top: 20px; }
+.footer-socials a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border: 1px solid rgba(18, 18, 16, 0.35); border-radius: var(--pill-radius);
+}
+.footer-meta {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    border-top: 1px solid rgba(18, 18, 16, 0.25); padding-top: 24px; padding-bottom: 24px; font-size: 0.85rem;
+}
+#viewAuditLogsBtn { text-decoration: underline; }
+.footer-logotype {
+    font-size: clamp(4rem, 13.5vw, 12.5rem); line-height: 0.78;
+    text-align: center; white-space: nowrap; margin-bottom: -0.08em; user-select: none;
+}
