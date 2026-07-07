@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initMenu();
     initStickyNav();
+    initGallery();
+    initLightbox();
 });
 
 /* --- Safe storage (degrades in private browsing) --- */
@@ -85,4 +87,93 @@ function initStickyNav() {
     const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+}
+
+/* --- Work gallery filters --- */
+function initGallery() {
+    const chips = document.querySelectorAll('.filter-chip');
+    const tiles = Array.from(document.querySelectorAll('.work-tile'));
+    tiles.forEach(tile => {
+        const img = tile.querySelector('img');
+        if (img) img.addEventListener('error', () => img.remove());
+    });
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.toggle('active', c === chip));
+            const filter = chip.dataset.filter;
+            tiles.forEach(tile => {
+                tile.hidden = filter !== 'all' && tile.dataset.category !== filter;
+            });
+            logAuditEvent('Gallery Filtered', 'Filter applied: ' + filter, 'User', 'SUCCESS');
+        });
+    });
+}
+
+/* --- Lightbox (on-site work preview) --- */
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const media = document.getElementById('lightboxMedia');
+    const caption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    const tiles = Array.from(document.querySelectorAll('.work-tile'));
+    let current = 0;
+    let lastFocus = null;
+
+    function visibleTiles() { return tiles.filter(t => !t.hidden); }
+
+    function render(index) {
+        const pool = visibleTiles();
+        if (!pool.length) return;
+        current = (index + pool.length) % pool.length;
+        const tile = pool[current];
+        const img = tile.querySelector('img');
+        media.innerHTML = '';
+        if (img) {
+            media.appendChild(img.cloneNode());
+        } else {
+            const ph = document.createElement('div');
+            ph.className = 'lightbox-placeholder';
+            ph.textContent = 'Sample coming soon';
+            media.appendChild(ph);
+        }
+        caption.textContent = tile.dataset.title + ' — ' + tile.dataset.categoryLabel;
+    }
+
+    function open(tile) {
+        lastFocus = document.activeElement;
+        render(visibleTiles().indexOf(tile));
+        lightbox.hidden = false;
+        document.body.classList.add('no-scroll');
+        closeBtn.focus();
+        logAuditEvent('Lightbox Opened', 'Viewing: ' + tile.dataset.title, 'User', 'SUCCESS');
+    }
+
+    function close() {
+        lightbox.hidden = true;
+        document.body.classList.remove('no-scroll');
+        if (lastFocus) lastFocus.focus();
+    }
+
+    tiles.forEach(tile => {
+        tile.querySelector('.tile-btn').addEventListener('click', () => open(tile));
+    });
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', () => render(current - 1));
+    nextBtn.addEventListener('click', () => render(current + 1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') render(current - 1);
+        if (e.key === 'ArrowRight') render(current + 1);
+        if (e.key === 'Tab') {
+            const focusables = lightbox.querySelectorAll('button');
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+            else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+        }
+    });
 }

@@ -119,7 +119,64 @@
                 <div class="marquee-set"><span>Zendesk</span><span>CRM</span><span>Claude</span><span>ChatGPT</span><span>Jasper</span><span>Midjourney</span><span>Canva</span><span>Photoshop</span><span>CapCut</span><span>Premiere Pro</span><span>SQL</span><span>Power BI</span><span>Excel</span><span>Notion</span><span>MS Teams</span><span>Buffer</span><span>Later</span><span>Google Workspace</span></div>
             </div>
         </div>
-        <!-- TASK 5 INSERTS: work gallery -->
+        <section class="work" id="work">
+            <div class="container">
+                <div class="section-head">
+                    <p class="micro-label">Selected Work</p>
+                    <h2 class="display section-title">The work speaks <span class="italic-accent">for itself.</span></h2>
+                </div>
+                <div class="filter-row" role="group" aria-label="Filter work by category">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="brand">Brand &amp; Social</button>
+                    <button class="filter-chip" data-filter="design">Graphic Design</button>
+                    <button class="filter-chip" data-filter="video">Video</button>
+                    <button class="filter-chip" data-filter="data">Data &amp; Ops</button>
+                </div>
+                <div class="work-grid">
+                    <figure class="work-tile" data-category="brand" data-title="AI Brand Voice System" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View AI Brand Voice System larger"><span class="tile-media"><img src="assets/work/ai-brand-voice-system.png" alt="AI Brand Voice System work sample"></span></button>
+                        <figcaption><strong>AI Brand Voice System</strong><span>Brand &amp; Social</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="brand" data-title="Organic Content Calendar" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View Organic Content Calendar larger"><span class="tile-media"><img src="assets/work/organic-content-calendar.png" alt="Organic Content Calendar work sample"></span></button>
+                        <figcaption><strong>Organic Content Calendar</strong><span>Brand &amp; Social</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="brand" data-title="Engagement Growth Campaign (+180%)" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View Engagement Growth Campaign larger"><span class="tile-media"><img src="assets/work/engagement-growth-campaign.png" alt="Engagement Growth Campaign work sample"></span></button>
+                        <figcaption><strong>Engagement Growth Campaign (+180%)</strong><span>Brand &amp; Social</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="design" data-title="Social Media Asset Suite" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Social Media Asset Suite larger"><span class="tile-media"><img src="assets/work/social-asset-suite.png" alt="Social Media Asset Suite work sample"></span></button>
+                        <figcaption><strong>Social Media Asset Suite</strong><span>Graphic Design</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="design" data-title="Presentation &amp; Slide Design" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Presentation and Slide Design larger"><span class="tile-media"><img src="assets/work/slide-design.png" alt="Presentation and slide design work sample"></span></button>
+                        <figcaption><strong>Presentation &amp; Slide Design</strong><span>Graphic Design</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="design" data-title="Marketing Graphics Pack" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Marketing Graphics Pack larger"><span class="tile-media"><img src="assets/work/marketing-graphics-pack.png" alt="Marketing Graphics Pack work sample"></span></button>
+                        <figcaption><strong>Marketing Graphics Pack</strong><span>Graphic Design</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="video" data-title="Short-form Reels Editing" data-category-label="Video">
+                        <button class="tile-btn" aria-label="View Short-form Reels Editing larger"><span class="tile-media"><img src="assets/work/reels-editing.png" alt="Short-form reels editing work sample"></span></button>
+                        <figcaption><strong>Short-form Reels Editing</strong><span>Video</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="video" data-title="Promo Clips &amp; Captions" data-category-label="Video">
+                        <button class="tile-btn" aria-label="View Promo Clips and Captions larger"><span class="tile-media"><img src="assets/work/promo-clips.png" alt="Promo clips and captions work sample"></span></button>
+                        <figcaption><strong>Promo Clips &amp; Captions</strong><span>Video</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="data" data-title="Power BI Feedback Dashboard" data-category-label="Data &amp; Ops">
+                        <button class="tile-btn" aria-label="View Power BI Feedback Dashboard larger"><span class="tile-media"><img src="assets/work/powerbi-dashboard.png" alt="Power BI feedback dashboard work sample"></span></button>
+                        <figcaption><strong>Power BI Feedback Dashboard</strong><span>Data &amp; Ops</span></figcaption>
+                    </figure>
+                    <figure class="work-tile" data-category="data" data-title="Notion SOP Library" data-category-label="Data &amp; Ops">
+                        <button class="tile-btn" aria-label="View Notion SOP Library larger"><span class="tile-media"><img src="assets/work/notion-sop-library.png" alt="Notion SOP library work sample"></span></button>
+                        <figcaption><strong>Notion SOP Library</strong><span>Data &amp; Ops</span></figcaption>
+                    </figure>
+                </div>
+                <p class="work-note">Real samples are being added — every project is viewable right here, no redirects.</p>
+            </div>
+        </section>
         <!-- TASK 6 INSERTS: about, testimonials, process, experience -->
         <!-- TASK 7 INSERTS: faq, big cta, contact -->
     </main>
@@ -171,7 +228,15 @@
         </div>
         <div class="footer-logotype" aria-hidden="true">DAMOLA<span class="logo-italic">kenny</span></div>
     </footer>
-    <!-- TASK 5 INSERTS: lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Work sample preview" hidden>
+        <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close preview"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Previous sample"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5m6 6-6-6 6-6"/></svg></button>
+        <figure class="lightbox-figure">
+            <div class="lightbox-media" id="lightboxMedia"></div>
+            <figcaption id="lightboxCaption"></figcaption>
+        </figure>
+        <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next sample"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </div>
     <!-- TASK 7 INSERTS: audit modal -->
 
     <script src="app.js"></script>
