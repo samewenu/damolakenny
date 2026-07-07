@@ -45,12 +45,15 @@ function logAuditEvent(actionType, targetEntity, actor, status) {
 function initTheme() {
     const toggle = document.getElementById('themeToggle');
     const saved = storageGet('portfolio-theme');
-    document.body.className = saved === 'light-theme' ? 'light-theme' : 'dark-theme';
-    logAuditEvent('Theme Loaded', 'Theme initialized to: ' + document.body.className, 'System', 'SUCCESS');
+    const initial = saved === 'light-theme' ? 'light-theme' : 'dark-theme';
+    document.body.classList.remove('dark-theme', 'light-theme');
+    document.body.classList.add(initial);
+    logAuditEvent('Theme Loaded', 'Theme initialized to: ' + initial, 'System', 'SUCCESS');
     if (!toggle) return;
     toggle.addEventListener('click', () => {
         const next = document.body.classList.contains('dark-theme') ? 'light-theme' : 'dark-theme';
-        document.body.className = next;
+        document.body.classList.remove('dark-theme', 'light-theme');
+        document.body.classList.add(next);
         storageSet('portfolio-theme', next);
         logAuditEvent('Theme Toggle', 'Changed theme to: ' + next, 'User', 'SUCCESS');
     });
