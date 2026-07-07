@@ -280,3 +280,39 @@ body.menu-open .icon-bars { display: none; }
 }
 .lightbox-btn:hover { border-color: #c5a880; }
 .lightbox-close { position: absolute; top: 24px; right: 24px; }
+
+/* --- About --- */
+.about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.about-visual { background: var(--bg-surface); border: 1px solid var(--hairline); border-radius: var(--radius); padding: 20px; }
+.about-visual img { border-radius: var(--radius); }
+.about-copy p { margin-bottom: 18px; }
+.about-copy .section-title { margin-bottom: 24px; }
+.about-chips { margin: 8px 0 28px; }
+
+/* --- Testimonials --- */
+.quote-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.quote-card { padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+.quote-card p { font-size: 0.95rem; }
+.quote-card cite { font-style: normal; font-size: 0.8rem; color: var(--text-secondary); margin-top: auto; }
+
+/* --- Process --- */
+.process-steps { max-width: 720px; }
+.process-step { display: flex; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--hairline); }
+.process-step:first-child { border-top: 1px solid var(--hairline); }
+.step-num {
+    flex: 0 0 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--accent); border-radius: var(--pill-radius);
+    font-family: var(--font-head); font-weight: 700; color: var(--accent-text);
+}
+.process-step h3 { font-size: 1.05rem; text-transform: uppercase; font-family: var(--font-head); margin-bottom: 6px; }
+
+/* --- Experience --- */
+.xp-row {
+    display: grid; grid-template-columns: 180px 1.4fr 1fr; gap: 16px; align-items: baseline;
+    padding: 18px 0; border-bottom: 1px solid var(--hairline);
+}
+.xp-row:first-child { border-top: 1px solid var(--hairline); }
+.xp-dates { font-size: 0.8rem; color: var(--text-secondary); letter-spacing: 0.04em; }
+.xp-role { font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.95rem; }
+.xp-org { font-size: 0.9rem; color: var(--text-secondary); text-align: right; }
+.certs { margin-top: 48px; }
