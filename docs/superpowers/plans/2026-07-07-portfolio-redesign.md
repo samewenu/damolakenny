@@ -882,7 +882,9 @@ function initGallery() {
     const tiles = Array.from(document.querySelectorAll('.work-tile'));
     tiles.forEach(tile => {
         const img = tile.querySelector('img');
-        if (img) img.addEventListener('error', () => img.remove());
+        if (!img) return;
+        img.addEventListener('error', () => img.remove());
+        if (img.complete && img.naturalWidth === 0) img.remove();
     });
     chips.forEach(chip => {
         chip.addEventListener('click', () => {
