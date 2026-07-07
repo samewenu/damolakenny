@@ -910,6 +910,13 @@ function initLightbox() {
 
     function visibleTiles() { return tiles.filter(t => !t.hidden); }
 
+    function makePlaceholder() {
+        const ph = document.createElement('div');
+        ph.className = 'lightbox-placeholder';
+        ph.textContent = 'Sample coming soon';
+        return ph;
+    }
+
     function render(index) {
         const pool = visibleTiles();
         if (!pool.length) return;
@@ -918,12 +925,13 @@ function initLightbox() {
         const img = tile.querySelector('img');
         media.innerHTML = '';
         if (img) {
-            media.appendChild(img.cloneNode());
+            const clone = img.cloneNode();
+            clone.addEventListener('error', () => {
+                if (clone.parentNode === media) media.replaceChild(makePlaceholder(), clone);
+            });
+            media.appendChild(clone);
         } else {
-            const ph = document.createElement('div');
-            ph.className = 'lightbox-placeholder';
-            ph.textContent = 'Sample coming soon';
-            media.appendChild(ph);
+            media.appendChild(makePlaceholder());
         }
         caption.textContent = tile.dataset.title + ' — ' + tile.dataset.categoryLabel;
     }
