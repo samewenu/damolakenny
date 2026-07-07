@@ -316,3 +316,74 @@ body.menu-open .icon-bars { display: none; }
 .xp-role { font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.95rem; }
 .xp-org { font-size: 0.9rem; color: var(--text-secondary); text-align: right; }
 .certs { margin-top: 48px; }
+
+/* --- FAQ --- */
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+.faq-item { border-bottom: 1px solid var(--hairline); }
+.faq-item summary {
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 20px 0; font-family: var(--font-head); font-weight: 700; text-transform: uppercase; font-size: 0.9rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; color: var(--accent-text); font-size: 1.2rem; transition: transform 0.3s var(--ease); }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 0 20px; font-size: 0.95rem; }
+
+/* --- Big CTA --- */
+.big-cta { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.big-cta-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.big-cta-inner .section-title { max-width: none; }
+.big-cta .hero-ctas { justify-content: center; }
+
+/* --- Contact --- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(32px, 5vw, 72px); }
+.contact-info .section-title { margin-bottom: 20px; }
+.contact-details { margin-top: 32px; }
+.contact-details li {
+    display: flex; flex-direction: column; gap: 2px; padding: 14px 0;
+    border-bottom: 1px solid var(--hairline); font-size: 0.95rem; color: var(--text-primary);
+}
+.contact-details li span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-text); }
+.contact-details a:hover { color: var(--accent-text); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.form-group label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.form-group input, .form-group select, .form-group textarea {
+    font: inherit; color: var(--text-primary); background: transparent;
+    border: 1px solid var(--hairline); border-radius: var(--radius); padding: 13px 16px;
+    transition: border-color 0.3s var(--ease);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+.form-group select { background: var(--bg-main); }
+.form-group .invalid { border-color: var(--danger); }
+.error-msg { display: none; font-size: 0.8rem; color: var(--danger); }
+.error-msg.visible { display: block; }
+.btn-submit { border: none; }
+.btn-submit .btn-wait { display: none; }
+.btn-submit.submitting .btn-text { display: none; }
+.btn-submit.submitting .btn-wait { display: inline; }
+.form-feedback { display: none; margin-top: 16px; font-size: 0.9rem; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--hairline); }
+.form-feedback.visible { display: block; }
+.success-feedback { color: var(--accent-text); border-color: var(--accent); }
+.error-feedback { color: var(--danger); border-color: var(--danger); }
+
+/* --- Audit modal --- */
+.modal {
+    position: fixed; inset: 0; z-index: 140; display: none;
+    align-items: center; justify-content: center; background: rgba(10, 10, 9, 0.8); padding: 24px;
+}
+.modal.visible { display: flex; }
+.modal-content { background: var(--bg-main); max-width: 860px; width: 100%; max-height: 80vh; overflow: auto; }
+.modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; border-bottom: 1px solid var(--hairline);
+}
+.modal-header h3 { font-size: 1rem; }
+.close-modal { font-size: 1.5rem; line-height: 1; }
+.modal-body { padding: 24px; }
+.audit-table-wrapper { overflow-x: auto; }
+.audit-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.audit-table th, .audit-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); }
+.audit-table th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); }
+.status-badge { border: 1px solid var(--hairline); border-radius: var(--pill-radius); padding: 2px 10px; font-size: 0.7rem; }
+.status-badge.success { color: var(--accent-text); border-color: var(--accent); }

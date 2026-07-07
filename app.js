@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyNav();
     initGallery();
     initLightbox();
+    initContactForm();
+    initAuditModal();
 });
 
 /* --- Safe storage (degrades in private browsing) --- */
@@ -186,4 +188,124 @@ function initLightbox() {
             else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
         }
     });
+}
+
+/* --- Contact form validation (ported) --- */
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    const contactName = document.getElementById('contactName');
+    const contactEmail = document.getElementById('contactEmail');
+    const contactIndustry = document.getElementById('contactIndustry');
+    const contactProject = document.getElementById('contactProject');
+    const contactMessage = document.getElementById('contactMessage');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+    const successFeedback = document.getElementById('formSuccessFeedback');
+    const errorFeedback = document.getElementById('formErrorFeedback');
+    const submitBtn = document.getElementById('contactSubmitBtn');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        successFeedback.classList.remove('visible');
+        errorFeedback.classList.remove('visible');
+        let isValid = true;
+
+        if (contactName.value.trim() === '') {
+            contactName.classList.add('invalid');
+            nameError.classList.add('visible');
+            isValid = false;
+        } else {
+            contactName.classList.remove('invalid');
+            nameError.classList.remove('visible');
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(contactEmail.value.trim())) {
+            contactEmail.classList.add('invalid');
+            emailError.classList.add('visible');
+            isValid = false;
+        } else {
+            contactEmail.classList.remove('invalid');
+            emailError.classList.remove('visible');
+        }
+
+        if (contactMessage.value.trim() === '') {
+            contactMessage.classList.add('invalid');
+            messageError.classList.add('visible');
+            isValid = false;
+        } else {
+            contactMessage.classList.remove('invalid');
+            messageError.classList.remove('visible');
+        }
+
+        if (!isValid) {
+            errorFeedback.classList.add('visible');
+            logAuditEvent('Contact Submission Rejected', 'Validation failed on inputs', 'User', 'VALIDATION_FAILED');
+            return;
+        }
+
+        submitBtn.classList.add('submitting');
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.classList.remove('submitting');
+            submitBtn.disabled = false;
+            successFeedback.classList.add('visible');
+            logAuditEvent(
+                'Contact Submission Created',
+                'Inquiry for project: ' + contactProject.value + ' in ' + contactIndustry.value + ' niche',
+                'Visitor (' + contactName.value.trim() + ')',
+                'SUCCESS'
+            );
+            contactForm.reset();
+        }, 1500);
+    });
+}
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+/* --- Audit log modal (ported) --- */
+function initAuditModal() {
+    const viewAuditLogsBtn = document.getElementById('viewAuditLogsBtn');
+    const auditLogsModal = document.getElementById('auditLogsModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const auditLogsTableBody = document.getElementById('auditLogsTableBody');
+
+    viewAuditLogsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loadAuditTable();
+        auditLogsModal.classList.add('visible');
+        logAuditEvent('Audit Modal Viewed', 'Admin viewer opened system audit reports', 'System', 'SUCCESS');
+    });
+    closeModalBtn.addEventListener('click', () => auditLogsModal.classList.remove('visible'));
+    auditLogsModal.addEventListener('click', (e) => {
+        if (e.target === auditLogsModal) auditLogsModal.classList.remove('visible');
+    });
+
+    function loadAuditTable() {
+        auditLogsTableBody.innerHTML = '';
+        let logs = [];
+        try { logs = JSON.parse(storageGet('system-audit-logs')) || []; } catch (err) { logs = []; }
+        logs.forEach(log => {
+            const row = document.createElement('tr');
+            const date = new Date(log.timestamp);
+            const formattedTime = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const statusClass = log.status === 'SUCCESS' ? 'success' : 'info';
+            row.innerHTML =
+                '<td><strong>' + formattedTime + '</strong></td>' +
+                '<td>' + escapeHtml(log.actionType) + '</td>' +
+                '<td>' + escapeHtml(log.targetEntity) + '</td>' +
+                '<td>' + escapeHtml(log.actor) + '</td>' +
+                '<td><span class="status-badge ' + statusClass + '">' + escapeHtml(log.status) + '</span></td>';
+            auditLogsTableBody.appendChild(row);
+        });
+    }
 }

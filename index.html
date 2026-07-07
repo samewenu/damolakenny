@@ -247,7 +247,97 @@
                 -->
             </div>
         </section>
-        <!-- TASK 7 INSERTS: faq, big cta, contact -->
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <p class="micro-label">FAQs</p>
+                    <h2 class="display section-title">Got questions? <span class="italic-accent">Here are answers.</span></h2>
+                </div>
+                <div class="faq-grid">
+                    <details class="faq-item"><summary>Do you work across time zones?</summary><p>Yes — fully remote, worldwide. I overlap comfortably with US and EU business hours and communicate async-first the rest of the time.</p></details>
+                    <details class="faq-item"><summary>What are your core services?</summary><p>Customer service representation, AI brand management, and graphic design — backed by data analysis, executive assistance, social media management, and video editing.</p></details>
+                    <details class="faq-item"><summary>What tools do you use daily?</summary><p>Zendesk and CRM platforms for support; Claude, ChatGPT, Jasper, and Midjourney for AI brand work; Canva and Photoshop for design; SQL, Power BI, and Excel for data; Notion, MS Teams, Buffer, and Later for operations.</p></details>
+                    <details class="faq-item"><summary>How do we start working together?</summary><p>Four steps: a discovery call, an audit and proposal, build-and-iterate with weekly check-ins, then handover with full documentation. See the process section above.</p></details>
+                    <details class="faq-item"><summary>Can I see samples of your work?</summary><p>Yes — the Selected Work gallery above shows samples by category, all viewable right here on the site. More available on request.</p></details>
+                    <details class="faq-item"><summary>How quickly do you respond?</summary><p>Within 24 hours, usually much faster.</p></details>
+                    <details class="faq-item"><summary>Which industries have you worked in?</summary><p>Healthcare and pharmacy retail, education, and tech and e-commerce startups.</p></details>
+                    <details class="faq-item"><summary>Are you open to full-time roles?</summary><p>Yes — open to full-time remote roles as well as contract and project engagements.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="big-cta">
+            <div class="container big-cta-inner">
+                <h2 class="display section-title">Not sure what you need? <span class="italic-accent">Let's have a chat.</span></h2>
+                <p>Tell me where it hurts — support, brand, or design — and I'll tell you honestly what would help.</p>
+                <div class="hero-ctas">
+                    <a href="mailto:oyindamolaw8@gmail.com" class="pill pill-primary">Book a Call</a>
+                    <a href="#contact" class="pill pill-outline">Fill the Brief</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <p class="micro-label">Say Hello</p>
+                    <h2 class="display section-title">Let's build systems <span class="italic-accent">that perform.</span></h2>
+                    <p>Have a support, brand, or design challenge? Drop a message — I reply within 24 hours.</p>
+                    <ul class="contact-details">
+                        <li><span>Email</span><a href="mailto:oyindamolaw8@gmail.com">oyindamolaw8@gmail.com</a></li>
+                        <li><span>Phone</span><a href="tel:+2347041107313">+234 704 110 7313</a></li>
+                        <li><span>Availability</span>Remote — Worldwide</li>
+                    </ul>
+                </div>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+                            <span class="error-msg" id="nameError">Please enter your name.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+                            <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactIndustry">Industry / Niche</label>
+                            <select id="contactIndustry" name="industry">
+                                <option value="saas">SaaS &amp; Software Tech</option>
+                                <option value="ecommerce">E-Commerce &amp; Brands</option>
+                                <option value="creatives">Creative &amp; Agency</option>
+                                <option value="education">Education &amp; E-Learning</option>
+                                <option value="other">Other Industry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactProject">Project Scope</label>
+                            <select id="contactProject" name="project">
+                                <option value="support">Customer Service &amp; Support</option>
+                                <option value="strategy">AI Brand Management</option>
+                                <option value="design">Graphic Design</option>
+                                <option value="consulting">General Consulting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Project Details</label>
+                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell me about your goals..." required></textarea>
+                        <span class="error-msg" id="messageError">Please share some details about your project.</span>
+                    </div>
+                    <button type="submit" class="pill pill-primary btn-submit" id="contactSubmitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-wait">Sending…</span>
+                    </button>
+                    <div class="form-feedback success-feedback" id="formSuccessFeedback">Request submitted! Oyindamola will respond within 24 hours.</div>
+                    <div class="form-feedback error-feedback" id="formErrorFeedback">Submission failed. Please correct the highlighted errors.</div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -306,7 +396,22 @@
         </figure>
         <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next sample"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
     </div>
-    <!-- TASK 7 INSERTS: audit modal -->
+    <div class="modal" id="auditLogsModal">
+        <div class="modal-content hairline-card">
+            <div class="modal-header">
+                <h3 class="display">System Activity Audit Logs</h3>
+                <button class="close-modal" id="closeModalBtn" aria-label="Close audit log">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="audit-table-wrapper">
+                    <table class="audit-table">
+                        <thead><tr><th>Timestamp</th><th>Action Type</th><th>Target Entity</th><th>Actor</th><th>Status</th></tr></thead>
+                        <tbody id="auditLogsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
