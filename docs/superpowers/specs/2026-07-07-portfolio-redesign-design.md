@@ -56,7 +56,7 @@ Light theme (via toggle, `body.light-theme`):
 - `--bg-main: #ffffff` · `--bg-surface: #f6f6f4`
 - `--text-primary: #111111` · `--text-secondary: #5f5c55`
 - `--hairline: #e5e5e2`
-- `--accent-text: #8f7248` (darkened gold for AA-compliant small text on white); surfaces/large text may use `#c5a880`
+- `--accent-text: #85693f` (darkened gold for AA-compliant small text on white); surfaces/large text may use `#c5a880`
 
 ### 3.3 Components
 
@@ -112,7 +112,7 @@ Pill buttons (solid + hairline-outline variants), sharp-cornered cards (max 4px 
 ## 6. Responsive & accessibility
 
 - Breakpoints ~1024 / 768 / 480px. Hero stacks (portrait below headline), service cards 3→1, gallery 3→2→1, footer columns stack, giant logotype scales with `vw`, filter chips horizontally scrollable on mobile.
-- Semantic landmarks, single `h1`, visible focus styles, `aria-expanded`/`aria-controls` on menu + lightbox, alt text on all imagery, AA contrast in both themes (darkened gold `#8f7248` for small gold text on white).
+- Semantic landmarks, single `h1`, visible focus styles, `aria-expanded`/`aria-controls` on menu + lightbox, alt text on all imagery, AA contrast in both themes (darkened gold `#85693f` for small gold text on white).
 - Missing/not-yet-provided gallery images degrade to the styled placeholder block — never a broken image.
 - `color-scheme` meta + updated title/description leading with the three roles; og tags kept.
 

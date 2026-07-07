@@ -27,7 +27,7 @@ body.light-theme {
     --bg-main: #ffffff; --bg-surface: #f6f6f4;
     --text-primary: #111111; --text-secondary: #5f5c55;
     --hairline: #e5e5e2;
-    --accent: #c5a880; --accent-text: #8f7248;
+    --accent: #c5a880; --accent-text: #85693f;
     --danger: #b03a30;
     --pill-ink: #111111;
     color-scheme: light;
@@ -405,9 +405,9 @@ body.menu-open .icon-bars { display: none; }
 .status-badge.success { color: var(--accent-text); border-color: var(--accent); }
 
 /* --- Scroll reveal --- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-.reveal.in-view { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.js .reveal.in-view { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {

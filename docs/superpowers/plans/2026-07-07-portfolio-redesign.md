@@ -16,7 +16,7 @@
 - Static only: no frameworks, no build tools, no JS libraries. The only external requests are Google Fonts.
 - Branch: all work on `redesign/minimal-editorial`, branched from `main`. Commit after every task.
 - Dark theme is the default: `<body class="dark-theme">`. Light theme via toggle. localStorage key: `portfolio-theme` (values `dark-theme` / `light-theme`).
-- Color tokens verbatim — dark: bg `#121210`, surface `#1a1a17`, text `#f4f2ed`, secondary `#a8a49b`, hairline `rgba(255,255,255,0.12)`, accent `#c5a880`, danger `#e08a80`. Light: bg `#ffffff`, surface `#f6f6f4`, text `#111111`, secondary `#5f5c55`, hairline `#e5e5e2`, accent `#c5a880`, accent-text `#8f7248` (small gold text on white), danger `#b03a30`.
+- Color tokens verbatim — dark: bg `#121210`, surface `#1a1a17`, text `#f4f2ed`, secondary `#a8a49b`, hairline `rgba(255,255,255,0.12)`, accent `#c5a880`, danger `#e08a80`. Light: bg `#ffffff`, surface `#f6f6f4`, text `#111111`, secondary `#5f5c55`, hairline `#e5e5e2`, accent `#c5a880`, accent-text `#85693f` (small gold text on white), danger `#b03a30`.
 - Fonts: Archivo 700/800 (uppercase headlines), Inter 400/500/600 (body), Playfair Display **italic only** 400/600 (accent words + logo "kenny"). No Lato, no Alex Brush.
 - Copy rules: NO city names anywhere ("Remote — Worldwide" framing). The three core roles always in this order: Customer Service Representative, AI Brand Manager, Graphic Designer. Wordmark is exactly `DAMOLA` + italic `kenny`.
 - Ported element IDs must not change: `themeToggle`, `contactForm`, `contactName`, `contactEmail`, `contactIndustry`, `contactProject`, `contactMessage`, `nameError`, `emailError`, `messageError`, `formSuccessFeedback`, `formErrorFeedback`, `contactSubmitBtn`, `viewAuditLogsBtn`, `auditLogsModal`, `closeModalBtn`, `auditLogsTableBody`.
@@ -94,6 +94,16 @@ Create `.claude/launch.json`:
     <title>Oyindamola Kehinde Waheed | Customer Service, AI Brand Management & Graphic Design</title>
 </head>
 <body class="dark-theme">
+    <script>
+    (function () {
+        document.documentElement.classList.add('js');
+        try {
+            if (localStorage.getItem('portfolio-theme') === 'light-theme') {
+                document.body.className = 'light-theme';
+            }
+        } catch (e) { /* storage unavailable */ }
+    })();
+    </script>
 
     <!-- TASK 2 INSERTS: header/nav -->
 
@@ -146,7 +156,7 @@ body.light-theme {
     --bg-main: #ffffff; --bg-surface: #f6f6f4;
     --text-primary: #111111; --text-secondary: #5f5c55;
     --hairline: #e5e5e2;
-    --accent: #c5a880; --accent-text: #8f7248;
+    --accent: #c5a880; --accent-text: #85693f;
     --danger: #b03a30;
     --pill-ink: #111111;
     color-scheme: light;
@@ -1537,9 +1547,9 @@ function initReveal() {
 
 ```css
 /* --- Scroll reveal --- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-.reveal.in-view { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.js .reveal.in-view { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {

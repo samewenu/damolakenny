@@ -16,6 +16,16 @@
     <title>Oyindamola Kehinde Waheed | Customer Service, AI Brand Management & Graphic Design</title>
 </head>
 <body class="dark-theme">
+    <script>
+    (function () {
+        document.documentElement.classList.add('js');
+        try {
+            if (localStorage.getItem('portfolio-theme') === 'light-theme') {
+                document.body.className = 'light-theme';
+            }
+        } catch (e) { /* storage unavailable */ }
+    })();
+    </script>
 
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="navbar-wrapper" id="siteHeader">
