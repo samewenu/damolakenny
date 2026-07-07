@@ -1193,13 +1193,13 @@ git add -A && git commit -m "feat: about, testimonials, process, experience sect
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactName">Name</label>
-                            <input type="text" id="contactName" name="name" placeholder="John Doe" required>
-                            <span class="error-msg" id="nameError">Please enter your name.</span>
+                            <input type="text" id="contactName" name="name" placeholder="John Doe" required aria-describedby="nameError">
+                            <span class="error-msg" id="nameError" role="alert">Please enter your name.</span>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
-                            <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required aria-describedby="emailError">
+                            <span class="error-msg" id="emailError" role="alert">Please enter a valid email address.</span>
                         </div>
                     </div>
                     <div class="form-row">
@@ -1225,15 +1225,15 @@ git add -A && git commit -m "feat: about, testimonials, process, experience sect
                     </div>
                     <div class="form-group">
                         <label for="contactMessage">Project Details</label>
-                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell me about your goals..." required></textarea>
-                        <span class="error-msg" id="messageError">Please share some details about your project.</span>
+                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell me about your goals..." required aria-describedby="messageError"></textarea>
+                        <span class="error-msg" id="messageError" role="alert">Please share some details about your project.</span>
                     </div>
                     <button type="submit" class="pill pill-primary btn-submit" id="contactSubmitBtn">
                         <span class="btn-text">Send Message</span>
                         <span class="btn-wait">Sending…</span>
                     </button>
-                    <div class="form-feedback success-feedback" id="formSuccessFeedback">Request submitted! Oyindamola will respond within 24 hours.</div>
-                    <div class="form-feedback error-feedback" id="formErrorFeedback">Submission failed. Please correct the highlighted errors.</div>
+                    <div class="form-feedback success-feedback" id="formSuccessFeedback" role="status">Request submitted! Oyindamola will respond within 24 hours.</div>
+                    <div class="form-feedback error-feedback" id="formErrorFeedback" role="alert">Submission failed. Please correct the highlighted errors.</div>
                 </form>
             </div>
         </section>
@@ -1242,14 +1242,14 @@ git add -A && git commit -m "feat: about, testimonials, process, experience sect
 - [ ] **Step 2: Replace `<!-- TASK 7 INSERTS: audit modal -->` with:**
 
 ```html
-    <div class="modal" id="auditLogsModal">
+    <div class="modal" id="auditLogsModal" role="dialog" aria-modal="true" aria-label="System activity audit logs">
         <div class="modal-content hairline-card">
             <div class="modal-header">
                 <h3 class="display">System Activity Audit Logs</h3>
                 <button class="close-modal" id="closeModalBtn" aria-label="Close audit log">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="audit-table-wrapper">
+                <div class="audit-table-wrapper" tabindex="0" aria-label="Audit log entries">
                     <table class="audit-table">
                         <thead><tr><th>Timestamp</th><th>Action Type</th><th>Target Entity</th><th>Actor</th><th>Status</th></tr></thead>
                         <tbody id="auditLogsTableBody"></tbody>
@@ -1418,15 +1418,39 @@ function initAuditModal() {
     const closeModalBtn = document.getElementById('closeModalBtn');
     const auditLogsTableBody = document.getElementById('auditLogsTableBody');
 
-    viewAuditLogsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    let lastFocus = null;
+
+    function openModal() {
+        lastFocus = document.activeElement;
         loadAuditTable();
         auditLogsModal.classList.add('visible');
+        closeModalBtn.focus();
         logAuditEvent('Audit Modal Viewed', 'Admin viewer opened system audit reports', 'System', 'SUCCESS');
+    }
+
+    function closeModal() {
+        auditLogsModal.classList.remove('visible');
+        if (lastFocus) lastFocus.focus();
+    }
+
+    viewAuditLogsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
     });
-    closeModalBtn.addEventListener('click', () => auditLogsModal.classList.remove('visible'));
+    closeModalBtn.addEventListener('click', closeModal);
     auditLogsModal.addEventListener('click', (e) => {
-        if (e.target === auditLogsModal) auditLogsModal.classList.remove('visible');
+        if (e.target === auditLogsModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (!auditLogsModal.classList.contains('visible')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Tab') {
+            const focusables = auditLogsModal.querySelectorAll('button, [tabindex="0"]');
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+            else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+        }
     });
 
     function loadAuditTable() {
@@ -1439,7 +1463,7 @@ function initAuditModal() {
             const formattedTime = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             const statusClass = log.status === 'SUCCESS' ? 'success' : 'info';
             row.innerHTML =
-                '<td><strong>' + formattedTime + '</strong></td>' +
+                '<td><strong>' + escapeHtml(formattedTime) + '</strong></td>' +
                 '<td>' + escapeHtml(log.actionType) + '</td>' +
                 '<td>' + escapeHtml(log.targetEntity) + '</td>' +
                 '<td>' + escapeHtml(log.actor) + '</td>' +

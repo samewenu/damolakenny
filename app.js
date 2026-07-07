@@ -279,15 +279,39 @@ function initAuditModal() {
     const closeModalBtn = document.getElementById('closeModalBtn');
     const auditLogsTableBody = document.getElementById('auditLogsTableBody');
 
-    viewAuditLogsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    let lastFocus = null;
+
+    function openModal() {
+        lastFocus = document.activeElement;
         loadAuditTable();
         auditLogsModal.classList.add('visible');
+        closeModalBtn.focus();
         logAuditEvent('Audit Modal Viewed', 'Admin viewer opened system audit reports', 'System', 'SUCCESS');
+    }
+
+    function closeModal() {
+        auditLogsModal.classList.remove('visible');
+        if (lastFocus) lastFocus.focus();
+    }
+
+    viewAuditLogsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
     });
-    closeModalBtn.addEventListener('click', () => auditLogsModal.classList.remove('visible'));
+    closeModalBtn.addEventListener('click', closeModal);
     auditLogsModal.addEventListener('click', (e) => {
-        if (e.target === auditLogsModal) auditLogsModal.classList.remove('visible');
+        if (e.target === auditLogsModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (!auditLogsModal.classList.contains('visible')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Tab') {
+            const focusables = auditLogsModal.querySelectorAll('button, [tabindex="0"]');
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+            else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+        }
     });
 
     function loadAuditTable() {
@@ -300,7 +324,7 @@ function initAuditModal() {
             const formattedTime = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             const statusClass = log.status === 'SUCCESS' ? 'success' : 'info';
             row.innerHTML =
-                '<td><strong>' + formattedTime + '</strong></td>' +
+                '<td><strong>' + escapeHtml(formattedTime) + '</strong></td>' +
                 '<td>' + escapeHtml(log.actionType) + '</td>' +
                 '<td>' + escapeHtml(log.targetEntity) + '</td>' +
                 '<td>' + escapeHtml(log.actor) + '</td>' +
