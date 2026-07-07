@@ -270,17 +270,22 @@ function logAuditEvent(actionType, targetEntity, actor, status) {
 function initTheme() {
     const toggle = document.getElementById('themeToggle');
     const saved = storageGet('portfolio-theme');
-    document.body.className = saved === 'light-theme' ? 'light-theme' : 'dark-theme';
-    logAuditEvent('Theme Loaded', 'Theme initialized to: ' + document.body.className, 'System', 'SUCCESS');
+    const initial = saved === 'light-theme' ? 'light-theme' : 'dark-theme';
+    document.body.classList.remove('dark-theme', 'light-theme');
+    document.body.classList.add(initial);
+    logAuditEvent('Theme Loaded', 'Theme initialized to: ' + initial, 'System', 'SUCCESS');
     if (!toggle) return;
     toggle.addEventListener('click', () => {
         const next = document.body.classList.contains('dark-theme') ? 'light-theme' : 'dark-theme';
-        document.body.className = next;
+        document.body.classList.remove('dark-theme', 'light-theme');
+        document.body.classList.add(next);
         storageSet('portfolio-theme', next);
         logAuditEvent('Theme Toggle', 'Changed theme to: ' + next, 'User', 'SUCCESS');
     });
 }
 ```
+
+(`classList` add/remove — never `className =` — so theme switches preserve unrelated body state classes like `menu-open`/`no-scroll` added by Tasks 2 and 5.)
 
 (Note: `initTheme` guards `!toggle` only because the toggle button arrives in Task 2 — the guard keeps Task 1 independently runnable and stays harmless afterward.)
 
