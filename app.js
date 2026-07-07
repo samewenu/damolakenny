@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLightbox();
     initContactForm();
     initAuditModal();
+    initReveal();
 });
 
 /* --- Safe storage (degrades in private browsing) --- */
@@ -332,4 +333,22 @@ function initAuditModal() {
             auditLogsTableBody.appendChild(row);
         });
     }
+}
+
+/* --- Scroll reveal --- */
+function initReveal() {
+    const els = document.querySelectorAll('.reveal');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('in-view'));
+        return;
+    }
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => observer.observe(el));
 }
