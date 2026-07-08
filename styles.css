@@ -284,7 +284,7 @@ body.menu-open .menu-toggle .icon-bars { display: none; }
 .quotes { display: grid; gap: 0; }
 .quotes blockquote { padding: clamp(24px, 3.5vw, 40px) 0; border-bottom: 1px solid var(--rule); }
 .quotes blockquote:first-child { border-top: 1px solid var(--rule); }
-.quotes blockquote p { font-family: var(--font-display); font-style: italic; font-weight: 500; color: var(--accent); font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1.25; margin-bottom: 14px; }
+.quotes blockquote p { font-family: var(--font-display); font-style: italic; font-weight: 500; color: var(--accent); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.25; margin-bottom: 14px; }
 .quotes cite { font-family: var(--font-mono); font-style: normal; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
 .quotes cite::before { content: '— '; }
 
