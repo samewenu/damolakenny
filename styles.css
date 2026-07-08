@@ -11,6 +11,9 @@
     --section-pad: clamp(64px, 9vw, 130px);
     --radius: 0;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --font-head: var(--font-display);
+    --font-accent: var(--font-display);
+    --pill-radius: 0;
 }
 
 body.light-theme {
@@ -20,6 +23,9 @@ body.light-theme {
     --rule: rgba(26, 23, 20, 0.22); --rule-strong: rgba(26, 23, 20, 0.55);
     --danger: #9a2f1c; --grain-blend: multiply; --grain-opacity: 0.05;
     color-scheme: light;
+    --bg-main: var(--paper); --bg-surface: var(--paper-inset);
+    --text-primary: var(--ink); --text-secondary: var(--ink-soft);
+    --hairline: var(--rule); --pill-ink: var(--paper);
 }
 
 body.dark-theme {
@@ -29,6 +35,9 @@ body.dark-theme {
     --rule: rgba(240, 234, 217, 0.18); --rule-strong: rgba(240, 234, 217, 0.5);
     --danger: #e08a80; --grain-blend: screen; --grain-opacity: 0.06;
     color-scheme: dark;
+    --bg-main: var(--paper); --bg-surface: var(--paper-inset);
+    --text-primary: var(--ink); --text-secondary: var(--ink-soft);
+    --hairline: var(--rule); --pill-ink: var(--paper);
 }
 
 /* --- Reset & base --- */

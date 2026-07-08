@@ -52,7 +52,7 @@ function logAuditEvent(actionType, targetEntity, actor, status) {
 function initTheme() {
     const toggle = document.getElementById('themeToggle');
     const saved = storageGet('portfolio-theme');
-    const initial = saved === 'light-theme' ? 'light-theme' : 'dark-theme';
+    const initial = saved === 'dark-theme' ? 'dark-theme' : 'light-theme';
     document.body.classList.remove('dark-theme', 'light-theme');
     document.body.classList.add(initial);
     logAuditEvent('Theme Loaded', 'Theme initialized to: ' + initial, 'System', 'SUCCESS');
