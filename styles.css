@@ -87,6 +87,7 @@ h1, h2, h3, h4, h5 { color: var(--ink); font-weight: 560; }
 }
 .running-head .rh-folio { margin-left: auto; color: var(--ink-soft); }
 .section-title { font-family: var(--font-display); font-weight: 560; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.02; letter-spacing: -0.015em; max-width: 18ch; }
+.section-title em { font-style: italic; color: var(--accent); }
 .caption { color: var(--ink-soft); display: block; margin-top: 10px; }
 .folio { color: var(--ink-soft); }
 .rule-double { border: 0; border-top: 3px solid var(--rule-strong); box-shadow: 0 3px 0 -2px var(--rule-strong); height: 0; }
@@ -151,6 +152,7 @@ body.menu-open .menu-toggle .icon-bars { display: none; }
 
 /* --- Footer (colophon, inverse) --- */
 .footer { background: var(--ink); color: var(--paper); overflow: hidden; }
+.footer :focus-visible { outline-color: var(--on-dark); }
 .footer h5, .footer p, .footer a, .footer li, .footer span { color: var(--paper); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-top: clamp(52px, 8vw, 92px); padding-bottom: 44px; }
 .footer-title { font-family: var(--font-display); font-weight: 540; font-size: clamp(1.5rem, 2.6vw, 2.2rem); max-width: 16ch; margin-bottom: 22px; }
