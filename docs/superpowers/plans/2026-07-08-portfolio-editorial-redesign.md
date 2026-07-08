@@ -364,8 +364,9 @@ body.menu-open .menu-toggle .icon-bars { display: none; }
     .nav-list { position: fixed; inset: 0; z-index: 90; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 28px; background: var(--paper); font-size: 1rem; }
     .nav-list.active { display: flex; }
     .nav-list .nav-link { font-size: 1.1rem; }
-    .menu-toggle { display: inline-flex; position: relative; z-index: 100; border: 1px solid var(--rule); width: 40px; height: 40px; align-items: center; justify-content: center; }
+    .menu-toggle { display: inline-flex; flex: 0 0 auto; position: relative; z-index: 100; border: 1px solid var(--rule); width: 40px; height: 40px; align-items: center; justify-content: center; }
     .nav-folio { display: none; }
+    .nav-cta { display: none; }
 }
 ```
 
