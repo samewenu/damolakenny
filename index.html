@@ -242,10 +242,8 @@
 
         <section class="faq" id="faq">
             <div class="container">
-                <div class="section-head reveal">
-                    <p class="micro-label">FAQs</p>
-                    <h2 class="display section-title">Got questions? <span class="italic-accent">Here are answers.</span></h2>
-                </div>
+                <div class="running-head reveal"><span>№ 07</span><span>FAQs</span><span class="rh-folio" aria-hidden="true">Interview</span></div>
+                <h2 class="section-title reveal" style="margin-bottom:clamp(24px,3vw,40px);">Questions, answered.</h2>
                 <div class="faq-grid">
                     <details class="faq-item reveal"><summary>Do you work across time zones?</summary><p>Yes — fully remote, worldwide. I overlap comfortably with US and EU business hours and communicate async-first the rest of the time.</p></details>
                     <details class="faq-item reveal"><summary>What are your core services?</summary><p>Customer service representation, AI brand management, and graphic design — backed by data analysis, executive assistance, social media management, and video editing.</p></details>
@@ -261,11 +259,11 @@
 
         <section class="big-cta">
             <div class="container big-cta-inner reveal">
-                <h2 class="display section-title">Not sure what you need? <span class="italic-accent">Let's have a chat.</span></h2>
+                <h2>Not sure what you need? <em>Let's have a chat.</em></h2>
                 <p>Tell me where it hurts — support, brand, or design — and I'll tell you honestly what would help.</p>
-                <div class="hero-ctas">
+                <div class="big-cta-ctas">
                     <a href="mailto:oyindamolaw8@gmail.com" class="stamp-btn">Book a Call</a>
-                    <a href="#contact" class="link-underline">Fill the Brief</a>
+                    <a href="#contact" class="link-underline">Fill the Brief <span class="arr" aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
@@ -273,8 +271,8 @@
         <section class="contact" id="contact">
             <div class="container contact-grid">
                 <div class="contact-info reveal">
-                    <p class="micro-label">Say Hello</p>
-                    <h2 class="display section-title">Let's build systems <span class="italic-accent">that perform.</span></h2>
+                    <div class="running-head reveal"><span>№ 08</span><span>Say Hello</span><span class="rh-folio" aria-hidden="true">Correspondence</span></div>
+                    <h2 class="section-title">Let's build systems <em>that perform.</em></h2>
                     <p>Have a support, brand, or design challenge? Drop a message — I reply within 24 hours.</p>
                     <ul class="contact-details">
                         <li><span>Email</span><a href="mailto:oyindamolaw8@gmail.com">oyindamolaw8@gmail.com</a></li>
@@ -286,19 +284,19 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactName">Name</label>
-                            <input type="text" id="contactName" name="name" placeholder="John Doe" required aria-describedby="nameError">
+                            <input type="text" id="contactName" name="name" class="field" placeholder="John Doe" required aria-describedby="nameError">
                             <span class="error-msg" id="nameError" role="alert">Please enter your name.</span>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required aria-describedby="emailError">
+                            <input type="email" id="contactEmail" name="email" class="field" placeholder="john@example.com" required aria-describedby="emailError">
                             <span class="error-msg" id="emailError" role="alert">Please enter a valid email address.</span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactIndustry">Industry / Niche</label>
-                            <select id="contactIndustry" name="industry">
+                            <select id="contactIndustry" name="industry" class="field">
                                 <option value="saas">SaaS &amp; Software Tech</option>
                                 <option value="ecommerce">E-Commerce &amp; Brands</option>
                                 <option value="creatives">Creative &amp; Agency</option>
@@ -308,7 +306,7 @@
                         </div>
                         <div class="form-group">
                             <label for="contactProject">Project Scope</label>
-                            <select id="contactProject" name="project">
+                            <select id="contactProject" name="project" class="field">
                                 <option value="support">Customer Service &amp; Support</option>
                                 <option value="strategy">AI Brand Management</option>
                                 <option value="design">Graphic Design</option>
@@ -318,7 +316,7 @@
                     </div>
                     <div class="form-group">
                         <label for="contactMessage">Project Details</label>
-                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell me about your goals..." required aria-describedby="messageError"></textarea>
+                        <textarea id="contactMessage" name="message" class="field" rows="4" placeholder="Tell me about your goals..." required aria-describedby="messageError"></textarea>
                         <span class="error-msg" id="messageError" role="alert">Please share some details about your project.</span>
                     </div>
                     <button type="submit" class="stamp-btn btn-submit" id="contactSubmitBtn">
@@ -335,7 +333,7 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <p class="footer-title display">Let's build something <span class="italic-accent">worth caring about.</span></p>
+                <p class="footer-title">Let's build something <em>worth caring about.</em></p>
                 <a href="mailto:oyindamolaw8@gmail.com" class="link-underline">oyindamolaw8@gmail.com</a>
             </div>
             <nav class="footer-col" aria-label="Footer menu">
@@ -389,7 +387,7 @@
         <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next sample"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
     </div>
     <div class="modal" id="auditLogsModal" role="dialog" aria-modal="true" aria-label="System activity audit logs">
-        <div class="modal-content hairline-card">
+        <div class="modal-content">
             <div class="modal-header">
                 <h3 class="display">System Activity Audit Logs</h3>
                 <button class="close-modal" id="closeModalBtn" aria-label="Close audit log">&times;</button>
