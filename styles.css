@@ -14,6 +14,7 @@
     --font-head: var(--font-display);
     --font-accent: var(--font-display);
     --pill-radius: 0;
+    --on-dark: #f3efe4;
 }
 
 body.light-theme {
@@ -251,7 +252,7 @@ body.menu-open .menu-toggle .icon-bars { display: none; }
    plain `.tile-media::before` would lose the `content`/`z-index` cascade to `.plate.duo::before`
    and silently render no placeholder text. `.work-tile .tile-media.plate::before` (3 classes)
    wins that tie so the "Sample coming soon" copy stays visible above the duotone overlay. */
-.work-tile .tile-media.plate::before { content: 'Sample coming soon'; position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--paper); }
+.work-tile .tile-media.plate::before { content: 'Sample coming soon'; position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--on-dark); }
 .tile-media img { position: relative; z-index: 3; }
 @media (max-width: 820px) { .plate-grid { grid-template-columns: 1fr 1fr; } .work-tile, .work-tile:nth-child(6n+1), .work-tile:nth-child(6n+4) { grid-column: span 1; } }
 @media (max-width: 520px) { .plate-grid { grid-template-columns: 1fr; } }
@@ -263,8 +264,8 @@ body.menu-open .menu-toggle .icon-bars { display: none; }
 .lightbox-media { background: var(--paper-inset); }
 .lightbox-media img { max-height: 72vh; width: 100%; object-fit: contain; }
 .lightbox-placeholder { display: flex; align-items: center; justify-content: center; width: min(680px,70vw); height: 46vh; font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
-.lightbox figcaption { color: var(--paper); font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; padding: 14px 16px; border-top: 1px solid rgba(240,234,217,0.2); }
-.lightbox-btn { width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(240,234,217,0.3); color: var(--paper); flex: 0 0 auto; }
+.lightbox figcaption { color: var(--on-dark); font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; padding: 14px 16px; border-top: 1px solid rgba(240,234,217,0.2); }
+.lightbox-btn { width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(240,234,217,0.3); color: var(--on-dark); flex: 0 0 auto; }
 .lightbox-btn:hover { border-color: var(--accent); }
 .lightbox-close { position: absolute; top: 24px; right: 24px; }
 @media (max-width: 520px) { .lightbox { flex-wrap: wrap; } .lightbox-prev, .lightbox-next { order: 2; } }

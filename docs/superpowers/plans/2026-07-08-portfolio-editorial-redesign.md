@@ -26,6 +26,7 @@
 - **Accessibility:** single `h1`; retain all ARIA (form `aria-describedby`/`role=alert`/`role=status`, dialog `role`/`aria-modal`/focus traps, `aria-expanded`); AA contrast in both themes; `:focus-visible` rings in `--accent`; decorative folios/drop caps/`◆` dividers marked `aria-hidden`.
 - `prefers-reduced-motion: reduce` disables cover sequence, scroll reveals, tickers; grain is static regardless.
 - Duotone plates are CSS-only, develop to full color on hover/focus, with an `@supports` fallback to the plain full-color image; empty gallery slots keep the "sample coming soon" placeholder.
+- **Text that sits on a dark surface in BOTH themes** (the duotone-plate placeholder, the lightbox caption/buttons on the fixed-dark scrim) must use the theme-independent `--on-dark: #f3efe4` token, NOT `var(--paper)` — `--paper` flips to near-black in ink mode and would render such text invisible.
 - Tasks 1–8 implement as written; Task 9 (polish) may refine visual values (spacing, type sizes, axis settings, hover timing) but must preserve tokens, IDs, class names, structure, and behavior.
 
 ## File Structure
