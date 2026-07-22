@@ -142,7 +142,15 @@ function initLightbox() {
         const tile = pool[current];
         const img = tile.querySelector('img');
         media.innerHTML = '';
-        if (img) {
+        if (tile.dataset.video) {
+            const frame = document.createElement('iframe');
+            frame.className = 'lightbox-video';
+            frame.src = 'https://www.youtube-nocookie.com/embed/' + tile.dataset.video + '?rel=0';
+            frame.title = tile.dataset.title;
+            frame.setAttribute('allow', 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            frame.setAttribute('allowfullscreen', '');
+            media.appendChild(frame);
+        } else if (img) {
             const clone = img.cloneNode();
             clone.addEventListener('error', () => {
                 if (clone.parentNode === media) media.replaceChild(makePlaceholder(), clone);
@@ -151,7 +159,7 @@ function initLightbox() {
         } else {
             media.appendChild(makePlaceholder());
         }
-        caption.textContent = tile.dataset.title + ' — ' + tile.dataset.categoryLabel;
+        caption.textContent = tile.dataset.title + ' · ' + tile.dataset.categoryLabel;
     }
 
     function open(tile) {
@@ -338,17 +346,27 @@ function initAuditModal() {
 /* --- Scroll reveal --- */
 function initReveal() {
     const els = document.querySelectorAll('.reveal');
+    const reveal = el => el.classList.add('in-view');
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-        els.forEach(el => el.classList.add('in-view'));
+        els.forEach(reveal);
         return;
     }
+    const inViewport = el => {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight && r.bottom > 0;
+    };
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
+                reveal(entry.target);
                 obs.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(el => observer.observe(el));
+    els.forEach(el => {
+        if (inViewport(el)) reveal(el);   // show above-the-fold content immediately
+        else observer.observe(el);
+    });
+    // Failsafe: never leave content permanently hidden if the observer never fires.
+    setTimeout(() => els.forEach(reveal), 3000);
 }

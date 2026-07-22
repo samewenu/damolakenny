@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Customer Service Representative, AI Brand Manager, and Graphic Designer — remote, worldwide. I keep customers cared for, brands consistent, and content sharp.">
+    <meta name="description" content="Customer Service Representative, AI Brand Manager, and Graphic Designer. Remote, worldwide. I keep customers cared for, brands consistent, and content sharp.">
     <meta name="color-scheme" content="light dark">
     <meta property="og:title" content="Oyindamola Kehinde Waheed | Customer Service, AI Brand Management & Graphic Design">
-    <meta property="og:description" content="Customer Service Representative, AI Brand Manager, and Graphic Designer — remote, worldwide.">
+    <meta property="og:description" content="Customer Service Representative, AI Brand Manager, and Graphic Designer. Remote, worldwide.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/oyindamola_portrait.png">
+    <meta property="og:image" content="assets/oyindamola_portrait.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Oyindamola Kehinde Waheed | Customer Service, AI Brand Management & Graphic Design</title>
 </head>
@@ -27,12 +27,10 @@
     })();
     </script>
 
-    <div class="grain" aria-hidden="true"></div>
-
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="navbar-wrapper" id="siteHeader">
         <nav class="navbar container" aria-label="Primary">
-            <a href="#hero" class="nav-logo">DAMOLA<span class="logo-italic">kenny</span></a>
+            <a href="#hero" class="nav-logo"><span class="logo-mark" aria-hidden="true">✱</span>damolakenny</a>
             <ul class="nav-list" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
@@ -41,11 +39,11 @@
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
             </ul>
             <div class="nav-actions">
-                <span class="nav-folio" aria-hidden="true">№ 01 · Portfolio</span>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
-                    <span class="tt-paper">Paper</span><span aria-hidden="true">/</span><span class="tt-ink">Ink</span>
+                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
                 </button>
-                <a href="#contact" class="link-underline nav-cta">Let's Talk</a>
+                <a href="#contact" class="btn btn-accent nav-cta">Let's Talk</a>
                 <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
                     <svg class="icon-bars" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
                     <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -57,228 +55,364 @@
     <main id="main">
         <section class="hero" id="hero">
             <div class="container">
-                <hr class="rule-double cover-rule" aria-hidden="true">
-                <div class="cover-issue"><span>Portfolio № 01</span><span>Remote — Worldwide</span></div>
-                <div class="cover-grid">
-                    <div class="cover-copy">
-                        <h1 class="cover-headline">Customer care, AI brands &amp; design — <em>done properly.</em></h1>
-                        <p class="cover-credit">Customer Service Representative — AI Brand Manager — Graphic Designer</p>
-                        <p class="cover-lead drop-cap">I'm Oyindamola. I keep customers genuinely cared for, build AI-powered brand systems, and design the assets that make it all look sharp — for tech, e-commerce, and lifestyle startups. Fully remote, worldwide.</p>
-                        <div class="cover-ctas">
-                            <a href="#work" class="stamp-btn">See the Work</a>
-                            <a href="#contact" class="link-underline">Let's Talk <span class="arr" aria-hidden="true">→</span></a>
-                        </div>
+                <div class="hero-profile">
+                    <img class="avatar" src="assets/avatar.jpg" alt="Portrait of Oyindamola Kehinde Waheed">
+                    <div class="profile-id">
+                        <p class="profile-name">Oyindamola Kehinde Waheed</p>
+                        <p class="profile-role">Customer service · AI brand management · design</p>
                     </div>
-                    <figure class="cover-figure">
-                        <div class="plate duo"><img src="assets/oyindamola_portrait.png" alt="Portrait of Oyindamola Kehinde Waheed"></div>
-                        <figcaption class="caption">Fig. 1 — Oyindamola Kehinde Waheed</figcaption>
-                    </figure>
+                    <div class="profile-socials">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20.4h3.38zM5.25 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM20.44 13.28c0-3.3-1.76-4.83-4.1-4.83a3.54 3.54 0 0 0-3.21 1.77V8.5H9.75V20.4h3.38v-6.28c0-1.42.65-2.26 1.9-2.26 1.15 0 1.7.81 1.7 2.26v6.28h3.7z"/></svg></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.18l-4.84-6.33L5.44 21H2.37l7.17-8.19L2 3h6.34l4.37 5.78zm-1.08 16.16h1.7L7.42 4.74H5.6z"/></svg></a>
+                        <a href="mailto:oyindamolaw8@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                    </div>
                 </div>
-                <dl class="stat-figures reveal">
-                    <div class="stat-fig"><dd class="num">5+</dd><dt class="lbl">Years in ops &amp; support</dt></div>
-                    <div class="stat-fig"><dd class="num">3</dd><dt class="lbl">Core disciplines</dt></div>
-                    <div class="stat-fig"><dd class="num">&lt;24h</dd><dt class="lbl">Response time</dt></div>
-                </dl>
-                <p class="kicker" style="margin-top:40px;">Organizations I've worked with</p>
-                <div class="employer-strip">
-                    <span>CVS Pharmacy</span><span>Sagility Health</span><span>University of Ibadan</span><span>Abiodun Foundation College</span><span>Lawleezy Healthcare</span>
+                <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Available for work · Remote, worldwide</p>
+                <h1 class="hero-headline">
+                    Hi! I'm <span class="chip chip-photo"><img src="assets/avatar.jpg" alt="">Oyindamola</span> a
+                    <span class="chip chip-solid">Customer Service Rep</span>,
+                    <span class="chip chip-accent">AI Brand Manager</span> &amp;
+                    <span class="chip chip-line">Graphic Designer</span>
+                    working remotely, worldwide <span class="hero-years">(2019 – PRESENT)</span>
+                </h1>
+                <p class="hero-lead">I keep customers genuinely cared for, build AI-powered brand systems, and design the assets that make it all look sharp, for tech, e-commerce, and lifestyle startups.</p>
+                <div class="hero-ctas">
+                    <a href="#work" class="btn btn-solid">See what I can do</a>
+                    <a href="#contact" class="link-arrow">Let's Talk <span class="arr" aria-hidden="true">→</span></a>
                 </div>
-            </div>
-        </section>
-
-        <div class="dateline" aria-hidden="true">
-            <div class="marquee-track">
-                <div class="marquee-set"><span>Customer Service</span><span class="dot" aria-hidden="true">◆</span><span>AI Brand Management</span><span class="dot" aria-hidden="true">◆</span><span>Graphic Design</span><span class="dot" aria-hidden="true">◆</span><span>Remote Worldwide</span><span class="dot" aria-hidden="true">◆</span></div>
-                <div class="marquee-set"><span>Customer Service</span><span class="dot" aria-hidden="true">◆</span><span>AI Brand Management</span><span class="dot" aria-hidden="true">◆</span><span>Graphic Design</span><span class="dot" aria-hidden="true">◆</span><span>Remote Worldwide</span><span class="dot" aria-hidden="true">◆</span></div>
-            </div>
-        </div>
-        <section class="services" id="services">
-            <div class="container">
-                <div class="running-head reveal"><span>№ 01</span><span>What I Do</span><span class="rh-folio" aria-hidden="true">Services</span></div>
-                <h2 class="section-title reveal" style="margin-bottom:clamp(32px,4vw,48px);">Three disciplines, one operator.</h2>
-                <div class="feature-index">
-                    <article class="feature-row reveal"><span class="numeral" aria-hidden="true">01</span><div><h3>Customer Service Representative</h3><p class="feature-body">Empathetic frontline support that keeps customers loyal — ticketing, escalations, billing queries, and retention across chat, email, and phone.</p><p class="feature-tools">Zendesk · CRM platforms · Ticketing · Live chat · Email support · Care-portal systems · Escalation workflows</p></div></article>
-                    <article class="feature-row reveal"><span class="numeral" aria-hidden="true">02</span><div><h3>AI Brand Manager</h3><p class="feature-body">Brand voice systems, AI-assisted content pipelines, and persona mapping that keep your brand consistent everywhere it speaks.</p><p class="feature-tools">Claude · ChatGPT · Jasper · Midjourney · Prompt engineering · Content calendars · Brand voice guides</p></div></article>
-                    <article class="feature-row reveal"><span class="numeral" aria-hidden="true">03</span><div><h3>Graphic Designer</h3><p class="feature-body">Clean, editorial social assets, slide systems, and marketing graphics designed to sell without shouting.</p><p class="feature-tools">Canva · Photoshop · Midjourney · Slide systems · Social templates · Brand kits</p></div></article>
-                </div>
-                <div class="skills-index reveal">
-                    <p class="kicker">Also in my toolkit</p>
-                    <div class="skill-row"><span class="skill-name">Data Analysis</span><span class="leader" aria-hidden="true"></span><span class="skill-tools">SQL · Power BI · Excel</span></div>
-                    <div class="skill-row"><span class="skill-name">Executive Assistance</span><span class="leader" aria-hidden="true"></span><span class="skill-tools">Notion · MS Teams · SOP design</span></div>
-                    <div class="skill-row"><span class="skill-name">Social Media Management</span><span class="leader" aria-hidden="true"></span><span class="skill-tools">Buffer · Later · Copywriting</span></div>
-                    <div class="skill-row"><span class="skill-name">Video Editing</span><span class="leader" aria-hidden="true"></span><span class="skill-tools">CapCut · Premiere Pro</span></div>
+                <div class="hero-orgs">
+                    <p class="orgs-label">Organizations I've worked with</p>
+                    <div class="orgs-strip">
+                        <span>CVS Pharmacy</span><span>Sagility Health</span><span>University of Ibadan</span><span>Abiodun Foundation College</span><span>Lawleezy Healthcare</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div class="dateline" aria-hidden="true">
-            <div class="marquee-track">
-                <div class="marquee-set"><span>Zendesk</span><span class="dot" aria-hidden="true">◆</span><span>CRM</span><span class="dot" aria-hidden="true">◆</span><span>Claude</span><span class="dot" aria-hidden="true">◆</span><span>ChatGPT</span><span class="dot" aria-hidden="true">◆</span><span>Jasper</span><span class="dot" aria-hidden="true">◆</span><span>Midjourney</span><span class="dot" aria-hidden="true">◆</span><span>Canva</span><span class="dot" aria-hidden="true">◆</span><span>Photoshop</span><span class="dot" aria-hidden="true">◆</span><span>CapCut</span><span class="dot" aria-hidden="true">◆</span><span>Premiere Pro</span><span class="dot" aria-hidden="true">◆</span><span>SQL</span><span class="dot" aria-hidden="true">◆</span><span>Power BI</span><span class="dot" aria-hidden="true">◆</span><span>Excel</span><span class="dot" aria-hidden="true">◆</span><span>Notion</span><span class="dot" aria-hidden="true">◆</span><span>MS Teams</span><span class="dot" aria-hidden="true">◆</span><span>Buffer</span><span class="dot" aria-hidden="true">◆</span><span>Later</span><span class="dot" aria-hidden="true">◆</span><span>Google Workspace</span><span class="dot" aria-hidden="true">◆</span></div>
-                <div class="marquee-set"><span>Zendesk</span><span class="dot" aria-hidden="true">◆</span><span>CRM</span><span class="dot" aria-hidden="true">◆</span><span>Claude</span><span class="dot" aria-hidden="true">◆</span><span>ChatGPT</span><span class="dot" aria-hidden="true">◆</span><span>Jasper</span><span class="dot" aria-hidden="true">◆</span><span>Midjourney</span><span class="dot" aria-hidden="true">◆</span><span>Canva</span><span class="dot" aria-hidden="true">◆</span><span>Photoshop</span><span class="dot" aria-hidden="true">◆</span><span>CapCut</span><span class="dot" aria-hidden="true">◆</span><span>Premiere Pro</span><span class="dot" aria-hidden="true">◆</span><span>SQL</span><span class="dot" aria-hidden="true">◆</span><span>Power BI</span><span class="dot" aria-hidden="true">◆</span><span>Excel</span><span class="dot" aria-hidden="true">◆</span><span>Notion</span><span class="dot" aria-hidden="true">◆</span><span>MS Teams</span><span class="dot" aria-hidden="true">◆</span><span>Buffer</span><span class="dot" aria-hidden="true">◆</span><span>Later</span><span class="dot" aria-hidden="true">◆</span><span>Google Workspace</span><span class="dot" aria-hidden="true">◆</span></div>
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <div class="ticker-set">
+                    <span class="tick"><b>5+</b><i>/</i>years in ops &amp; support</span>
+                    <span class="tick"><b>&lt;24h</b><i>/</i>response time</span>
+                    <span class="tick"><b>3</b><i>/</i>core disciplines</span>
+                    <span class="tick"><b>100%</b><i>/</i>remote &amp; async-friendly</span>
+                </div>
+                <div class="ticker-set">
+                    <span class="tick"><b>5+</b><i>/</i>years in ops &amp; support</span>
+                    <span class="tick"><b>&lt;24h</b><i>/</i>response time</span>
+                    <span class="tick"><b>3</b><i>/</i>core disciplines</span>
+                    <span class="tick"><b>100%</b><i>/</i>remote &amp; async-friendly</span>
+                </div>
             </div>
         </div>
-        <section class="work" id="work">
+
+        <section class="services band" id="services">
             <div class="container">
-                <div class="running-head reveal"><span>№ 02</span><span>Selected Work</span><span class="rh-folio" aria-hidden="true">Plates</span></div>
-                <h2 class="section-title reveal" style="margin-bottom:clamp(28px,4vw,44px);">The work speaks for itself.</h2>
+                <div class="section-head reveal">
+                    <p class="section-tag">{01} — What I do</p>
+                    <h2 class="section-title">Three disciplines, one operator</h2>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card reveal">
+                        <span class="step-num" aria-hidden="true">/01</span>
+                        <h3>Customer Service Representative</h3>
+                        <p>Empathetic frontline support that keeps customers loyal. Ticketing, escalations, billing queries, and retention across chat, email, and phone.</p>
+                        <div class="chip-row">
+                            <span class="chip-mini">Zendesk</span><span class="chip-mini">CRM platforms</span><span class="chip-mini">Ticketing</span><span class="chip-mini">Live chat</span><span class="chip-mini">Email support</span><span class="chip-mini">Escalation workflows</span>
+                        </div>
+                    </article>
+                    <article class="service-card reveal">
+                        <span class="step-num" aria-hidden="true">/02</span>
+                        <h3>AI Brand Manager</h3>
+                        <p>Brand voice systems, AI-assisted content pipelines, and persona mapping that keep your brand consistent everywhere it speaks.</p>
+                        <div class="chip-row">
+                            <span class="chip-mini">Claude</span><span class="chip-mini">ChatGPT</span><span class="chip-mini">Jasper</span><span class="chip-mini">Midjourney</span><span class="chip-mini">Prompt engineering</span><span class="chip-mini">Brand voice guides</span>
+                        </div>
+                    </article>
+                    <article class="service-card reveal">
+                        <span class="step-num" aria-hidden="true">/03</span>
+                        <h3>Graphic Designer</h3>
+                        <p>Clean, editorial social assets, slide systems, and marketing graphics designed to sell without shouting.</p>
+                        <div class="chip-row">
+                            <span class="chip-mini">Canva</span><span class="chip-mini">Photoshop</span><span class="chip-mini">Midjourney</span><span class="chip-mini">Slide systems</span><span class="chip-mini">Social templates</span><span class="chip-mini">Brand kits</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="toolkit reveal">
+                    <p class="toolkit-label">Also in my toolkit</p>
+                    <div class="toolkit-row"><span class="tk-name">Data Analysis</span><span class="tk-tools">SQL · Power BI · Excel</span></div>
+                    <div class="toolkit-row"><span class="tk-name">Executive Assistance</span><span class="tk-tools">Notion · MS Teams · SOP design</span></div>
+                    <div class="toolkit-row"><span class="tk-name">Social Media Management</span><span class="tk-tools">Buffer · Later · Copywriting</span></div>
+                    <div class="toolkit-row"><span class="tk-name">Video Editing</span><span class="tk-tools">CapCut · Premiere Pro</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work band-dark" id="work">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-tag">{02} — Selected work</p>
+                    <h2 class="section-title">The work speaks for itself</h2>
+                    <a href="#contact" class="btn btn-accent section-head-cta">Become a client</a>
+                </div>
                 <div class="filter-row" role="group" aria-label="Filter work by category">
                     <button class="filter-toggle filter-chip active" data-filter="all">All</button>
                     <button class="filter-toggle filter-chip" data-filter="brand">Brand &amp; Social</button>
                     <button class="filter-toggle filter-chip" data-filter="design">Graphic Design</button>
                     <button class="filter-toggle filter-chip" data-filter="video">Video</button>
-                    <button class="filter-toggle filter-chip" data-filter="data">Data &amp; Ops</button>
                 </div>
                 <div class="plate-grid">
-                    <figure class="work-tile reveal" data-category="brand" data-title="AI Brand Voice System" data-category-label="Brand &amp; Social">
-                        <button class="tile-btn" aria-label="View AI Brand Voice System larger"><span class="tile-media plate duo"><img src="assets/work/ai-brand-voice-system.png" alt="AI Brand Voice System work sample"></span></button>
-                        <figcaption><span class="w-title">AI Brand Voice System</span><span>Plate 01 — Brand &amp; Social</span></figcaption>
+                    <figure class="work-tile reveal" data-category="design" data-title="&quot;Top Quality Leather&quot; Campaign Post" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Top Quality Leather campaign post larger"><span class="tile-media" data-ph="Top Quality Leather"><img src="assets/work/313eko-black-leather.jpg" alt="Dark editorial social post of a black leather shoe with smoke, for 313EKO"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">"Top Quality Leather" Campaign Post</span><span class="tile-meta">Design</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="brand" data-title="Organic Content Calendar" data-category-label="Brand &amp; Social">
-                        <button class="tile-btn" aria-label="View Organic Content Calendar larger"><span class="tile-media plate duo"><img src="assets/work/organic-content-calendar.png" alt="Organic Content Calendar work sample"></span></button>
-                        <figcaption><span class="w-title">Organic Content Calendar</span><span>Plate 02 — Brand &amp; Social</span></figcaption>
+                    <figure class="work-tile reveal" data-category="brand" data-title="Eid Mubarak Brand Greeting" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View Eid Mubarak brand greeting larger"><span class="tile-media" data-ph="Eid Mubarak Greeting"><img src="assets/work/313eko-eid-mandala.jpg" alt="Green and gold Eid Mubarak greeting card with mandala pattern for 313EKO"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Eid Mubarak Brand Greeting</span><span class="tile-meta">Social</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="brand" data-title="Engagement Growth Campaign (+180%)" data-category-label="Brand &amp; Social">
-                        <button class="tile-btn" aria-label="View Engagement Growth Campaign larger"><span class="tile-media plate duo"><img src="assets/work/engagement-growth-campaign.png" alt="Engagement Growth Campaign work sample"></span></button>
-                        <figcaption><span class="w-title">Engagement Growth Campaign (+180%)</span><span>Plate 03 — Brand &amp; Social</span></figcaption>
+                    <figure class="work-tile reveal" data-category="video" data-video="lU_fagyM9RY" data-title="AI Shoe Campaign Ad" data-category-label="Video">
+                        <button class="tile-btn" aria-label="Play AI product ad shoe campaign video"><span class="tile-media" data-ph="AI Product Ad"><img src="assets/work/yt-lU_fagyM9RY.jpg" alt="Thumbnail of AI-generated shoe advertisement video"><span class="tile-play" aria-hidden="true"></span></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">AI Shoe Campaign Ad</span><span class="tile-meta">AI Video</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="design" data-title="Social Media Asset Suite" data-category-label="Graphic Design">
-                        <button class="tile-btn" aria-label="View Social Media Asset Suite larger"><span class="tile-media plate duo"><img src="assets/work/social-asset-suite.png" alt="Social Media Asset Suite work sample"></span></button>
-                        <figcaption><span class="w-title">Social Media Asset Suite</span><span>Plate 04 — Graphic Design</span></figcaption>
+                    <figure class="work-tile reveal" data-category="design" data-title="Beaded Shoe Editorial Post" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Beaded Shoe editorial post larger"><span class="tile-media" data-ph="Beaded Shoe Editorial"><img src="assets/work/313eko-beaded-editorial.jpg" alt="Editorial social post of a burgundy velvet loafer with coral beading"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Beaded Shoe Editorial Post</span><span class="tile-meta">Design</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="design" data-title="Presentation &amp; Slide Design" data-category-label="Graphic Design">
-                        <button class="tile-btn" aria-label="View Presentation and Slide Design larger"><span class="tile-media plate duo"><img src="assets/work/slide-design.png" alt="Presentation and slide design work sample"></span></button>
-                        <figcaption><span class="w-title">Presentation &amp; Slide Design</span><span>Plate 05 — Graphic Design</span></figcaption>
+                    <figure class="work-tile reveal" data-category="brand" data-title="Christmas Campaign Card" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View Christmas campaign card larger"><span class="tile-media" data-ph="Christmas Campaign"><img src="assets/work/313eko-christmas.jpg" alt="Merry Christmas greeting card with red bow and gifts for 313EKO"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Christmas Campaign Card</span><span class="tile-meta">Social</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="design" data-title="Marketing Graphics Pack" data-category-label="Graphic Design">
-                        <button class="tile-btn" aria-label="View Marketing Graphics Pack larger"><span class="tile-media plate duo"><img src="assets/work/marketing-graphics-pack.png" alt="Marketing Graphics Pack work sample"></span></button>
-                        <figcaption><span class="w-title">Marketing Graphics Pack</span><span>Plate 06 — Graphic Design</span></figcaption>
+                    <figure class="work-tile reveal" data-category="video" data-video="gmQHFlfcsbA" data-title="AI Campaign Recreation Reel" data-category-label="Video">
+                        <button class="tile-btn" aria-label="Play AI campaign recreation reel"><span class="tile-media" data-ph="AI Campaign Reel"><img src="assets/work/yt-gmQHFlfcsbA.jpg" alt="Thumbnail of AI-generated product campaign recreation video"><span class="tile-play" aria-hidden="true"></span></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">AI Campaign Recreation Reel</span><span class="tile-meta">AI Video</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="video" data-title="Short-form Reels Editing" data-category-label="Video">
-                        <button class="tile-btn" aria-label="View Short-form Reels Editing larger"><span class="tile-media plate duo"><img src="assets/work/reels-editing.png" alt="Short-form reels editing work sample"></span></button>
-                        <figcaption><span class="w-title">Short-form Reels Editing</span><span>Plate 07 — Video</span></figcaption>
+                    <figure class="work-tile reveal" data-category="design" data-title="Product Still-Life Composition" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View product still-life composition larger"><span class="tile-media" data-ph="Product Still-Life"><img src="assets/work/313eko-still-life.jpg" alt="Warm still-life composition of brown oxford shoes with draped fabric"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Product Still-Life Composition</span><span class="tile-meta">Design</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="video" data-title="Promo Clips &amp; Captions" data-category-label="Video">
-                        <button class="tile-btn" aria-label="View Promo Clips and Captions larger"><span class="tile-media plate duo"><img src="assets/work/promo-clips.png" alt="Promo clips and captions work sample"></span></button>
-                        <figcaption><span class="w-title">Promo Clips &amp; Captions</span><span>Plate 08 — Video</span></figcaption>
+                    <figure class="work-tile reveal" data-category="brand" data-title="Happy Eid Social Post" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View Happy Eid social post larger"><span class="tile-media" data-ph="Happy Eid Post"><img src="assets/work/313eko-eid-lanterns.jpg" alt="Happy Eid Mubarak social post with gold lanterns on black for 313EKO"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Happy Eid Social Post</span><span class="tile-meta">Social</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="data" data-title="Power BI Feedback Dashboard" data-category-label="Data &amp; Ops">
-                        <button class="tile-btn" aria-label="View Power BI Feedback Dashboard larger"><span class="tile-media plate duo"><img src="assets/work/powerbi-dashboard.png" alt="Power BI feedback dashboard work sample"></span></button>
-                        <figcaption><span class="w-title">Power BI Feedback Dashboard</span><span>Plate 09 — Data &amp; Ops</span></figcaption>
+                    <figure class="work-tile reveal" data-category="video" data-video="dTU-23UbMuc" data-title="AI ASMR Product Reel" data-category-label="Video">
+                        <button class="tile-btn" aria-label="Play AI ASMR product reel"><span class="tile-media" data-ph="AI ASMR Reel"><img src="assets/work/yt-dTU-23UbMuc.jpg" alt="Thumbnail of AI-generated ASMR-style shoe advertisement"><span class="tile-play" aria-hidden="true"></span></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">AI ASMR Product Reel</span><span class="tile-meta">AI Video</span></figcaption>
                     </figure>
-                    <figure class="work-tile reveal" data-category="data" data-title="Notion SOP Library" data-category-label="Data &amp; Ops">
-                        <button class="tile-btn" aria-label="View Notion SOP Library larger"><span class="tile-media plate duo"><img src="assets/work/notion-sop-library.png" alt="Notion SOP library work sample"></span></button>
-                        <figcaption><span class="w-title">Notion SOP Library</span><span>Plate 10 — Data &amp; Ops</span></figcaption>
+                    <figure class="work-tile reveal" data-category="design" data-title="Burnt Brown Buckled Shoe Post" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Burnt Brown Buckled Shoe post larger"><span class="tile-media" data-ph="Burnt Brown Buckled"><img src="assets/work/313eko-burnt-brown.jpg" alt="Typographic product post for a burnt brown buckled shoe"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Burnt Brown Buckled Shoe Post</span><span class="tile-meta">Design</span></figcaption>
+                    </figure>
+                    <figure class="work-tile reveal" data-category="brand" data-title="Season's Thank-You Card" data-category-label="Brand &amp; Social">
+                        <button class="tile-btn" aria-label="View Season's Thank-You card larger"><span class="tile-media" data-ph="Thank-You Card"><img src="assets/work/313eko-thank-you.jpg" alt="Festive thank-you card thanking customers for the season, for 313EKO"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Season's Thank-You Card</span><span class="tile-meta">Social</span></figcaption>
+                    </figure>
+                    <figure class="work-tile reveal" data-category="design" data-title="Handmade Collection Post" data-category-label="Graphic Design">
+                        <button class="tile-btn" aria-label="View Handmade Collection post larger"><span class="tile-media" data-ph="Handmade Collection"><img src="assets/work/313eko-handmade.jpg" alt="Top Quality Leather Handmade social post with black loafers"></span></button>
+                        <figcaption class="tile-cap"><span class="tile-title">Handmade Collection Post</span><span class="tile-meta">Design</span></figcaption>
                     </figure>
                 </div>
-                <p class="work-note">Real samples are being added — every project is viewable right here, no redirects.</p>
+                <p class="work-note">Shown: social design and AI video work from brand engagements. More samples available on request.</p>
             </div>
         </section>
-        <section class="about" id="about">
+
+        <section class="tools band" id="tools">
             <div class="container">
-                <div class="running-head reveal"><span>№ 03</span><span>About</span><span class="rh-folio" aria-hidden="true">The Person</span></div>
-                <div class="feature-article">
-                    <figure class="about-figure reveal">
-                        <div class="plate duo"><img src="assets/about_candid.png" alt="Oyindamola working at her desk"></div>
-                        <figcaption class="caption">Fig. 2 — At work</figcaption>
-                    </figure>
-                    <div class="about-body reveal">
-                        <h2 class="section-title" style="margin-bottom:24px;">The person behind the systems.</h2>
-                        <p class="about-lead drop-cap">I didn't take the traditional path. My training is in scientific research — a B.Sc. and M.Sc. in Human Anatomy — where I learned to see operations as systems: patterns, precision, and processes that hold up under pressure.</p>
-                        <div class="about-notes">
-                            <p class="margin-note"><strong>B.Sc.</strong> Anatomy</p>
-                            <p class="margin-note"><strong>M.Sc.</strong> Human Anatomy</p>
-                        </div>
-                        <p>That rigor carried me through frontline support and administrative operations at CVS Pharmacy and Sagility Health, and today it powers everything I do — from resolving a customer's toughest day to building AI brand systems and designing assets that feel human.</p>
-                        <a href="OYINDAMOLA RESUME(pdfgear.com).pdf" download="Oyindamola_Resume.pdf" class="stamp-btn" style="margin-top:8px;">Get My Resume (PDF)</a>
+                <div class="section-head reveal">
+                    <p class="section-tag">{03} — Tools &amp; skills</p>
+                    <h2 class="section-title">My working toolbox</h2>
+                </div>
+                <div class="tool-list">
+                    <div class="tool-row reveal" style="--pct:90%;">
+                        <div class="tool-id"><h3>Zendesk &amp; CRM</h3><p>Support desks, ticketing &amp; live chat</p></div>
+                        <div class="bar-track"><span class="bar-fill"></span></div>
+                        <span class="bar-pct">90%</span>
+                    </div>
+                    <div class="tool-row reveal" style="--pct:85%;">
+                        <div class="tool-id"><h3>Claude · ChatGPT · Jasper</h3><p>AI brand systems &amp; prompt engineering</p></div>
+                        <div class="bar-track"><span class="bar-fill"></span></div>
+                        <span class="bar-pct">85%</span>
+                    </div>
+                    <div class="tool-row reveal" style="--pct:90%;">
+                        <div class="tool-id"><h3>Canva</h3><p>Social assets, slide systems &amp; brand kits</p></div>
+                        <div class="bar-track"><span class="bar-fill"></span></div>
+                        <span class="bar-pct">90%</span>
+                    </div>
+                    <div class="tool-row reveal" style="--pct:75%;">
+                        <div class="tool-id"><h3>Photoshop &amp; Midjourney</h3><p>Raster editing &amp; AI-assisted visuals</p></div>
+                        <div class="bar-track"><span class="bar-fill"></span></div>
+                        <span class="bar-pct">75%</span>
+                    </div>
+                    <div class="tool-row reveal" style="--pct:70%;">
+                        <div class="tool-id"><h3>SQL · Power BI · Excel</h3><p>Dashboards, reporting &amp; data analysis</p></div>
+                        <div class="bar-track"><span class="bar-fill"></span></div>
+                        <span class="bar-pct">70%</span>
+                    </div>
+                    <div class="tool-row reveal" style="--pct:70%;">
+                        <div class="tool-id"><h3>CapCut &amp; Premiere Pro</h3><p>Short-form edits, captions &amp; promo clips</p></div>
+                        <div class="bar-track"><span class="bar-fill"></span></div>
+                        <span class="bar-pct">70%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ticker ticker-cats" aria-hidden="true">
+                <div class="ticker-track">
+                    <div class="ticker-set">
+                        <span class="cat-pill">Customer support</span><span class="cat-pill">Brand systems</span><span class="cat-pill">Social content</span><span class="cat-pill">Video editing</span><span class="cat-pill">Data &amp; ops</span><span class="cat-pill">Executive assistance</span>
+                    </div>
+                    <div class="ticker-set">
+                        <span class="cat-pill">Customer support</span><span class="cat-pill">Brand systems</span><span class="cat-pill">Social content</span><span class="cat-pill">Video editing</span><span class="cat-pill">Data &amp; ops</span><span class="cat-pill">Executive assistance</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="testimonials">
+        <section class="about band" id="about">
             <div class="container">
-                <div class="running-head reveal"><span>№ 04</span><span>Testimonials</span><span class="rh-folio" aria-hidden="true">Notices</span></div>
-                <!-- PLACEHOLDER TESTIMONIALS — swap with real quotes before wide sharing (spec §10) -->
-                <div class="quotes">
-                    <blockquote class="reveal"><p>"Oyindamola turned our support inbox from a fire drill into a system. Response times dropped and customers noticed."</p><cite>Operations Lead, healthcare services</cite></blockquote>
-                    <blockquote class="reveal"><p>"The brand voice prompts she built write like our best copywriter on their best day."</p><cite>Founder, e-commerce startup</cite></blockquote>
-                    <blockquote class="reveal"><p>"Clean, consistent design work delivered faster than agencies we'd paid triple for."</p><cite>Marketing Manager, SaaS</cite></blockquote>
-                    <blockquote class="reveal"><p>"She documents everything. Handovers that used to take weeks now take a call."</p><cite>CEO, creative agency</cite></blockquote>
+                <div class="about-card reveal">
+                    <figure class="about-figure">
+                        <img src="assets/portrait_seated.jpg" alt="Oyindamola Kehinde Waheed in a burgundy suit, seated studio portrait">
+                    </figure>
+                    <div class="about-body">
+                        <p class="section-tag">{04} — About</p>
+                        <h2 class="section-title">The person behind the systems</h2>
+                        <p class="about-lead">I didn't take the traditional path. My training is in scientific research, with a B.Sc. in Human Anatomy and an M.Sc. in Anatomy from Lead City University. That's where I learned to see operations as systems: patterns, precision, and processes that hold up under pressure.</p>
+                        <p>That rigor carried me through frontline support and administrative operations at CVS Pharmacy and Sagility Health, and today it powers everything I do, from resolving a customer's toughest day to building AI brand systems and designing assets that feel human.</p>
+                        <div class="chip-row">
+                            <span class="chip-mini">B.Sc. Human Anatomy · 4.05/5.00</span><span class="chip-mini">M.Sc. Anatomy · 4.08/5.00</span>
+                        </div>
+                        <a href="assets/Oyindamola_Waheed_CV.pdf" target="_blank" rel="noopener" class="btn btn-solid about-cta">Get My CV (PDF)</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="process" id="process">
+        <section class="process band-dark" id="process">
             <div class="container">
-                <div class="running-head reveal"><span>№ 05</span><span>How We'd Work</span><span class="rh-folio" aria-hidden="true">Method</span></div>
-                <h2 class="section-title reveal" style="margin-bottom:clamp(28px,4vw,44px);">A four-step process.</h2>
+                <div class="section-head reveal">
+                    <p class="section-tag">{05} — Process</p>
+                    <h2 class="section-title">How we'd work together</h2>
+                </div>
                 <ol class="process-list">
-                    <li class="process-step reveal"><span class="numeral" aria-hidden="true">1</span><div><h3>Discovery Call</h3><p>We talk goals, scope, and fit. Book via the contact form or email.</p></div></li>
-                    <li class="process-step reveal"><span class="numeral" aria-hidden="true">2</span><div><h3>Audit &amp; Proposal</h3><p>I review your current support, brand, and content setup, then send a clear plan with scope and timeline.</p></div></li>
-                    <li class="process-step reveal"><span class="numeral" aria-hidden="true">3</span><div><h3>Build &amp; Iterate</h3><p>I execute with weekly check-ins and transparent reporting. You always know what's shipping.</p></div></li>
-                    <li class="process-step reveal"><span class="numeral" aria-hidden="true">4</span><div><h3>Handover &amp; Support</h3><p>Documentation and SOPs so your team can run it — with ongoing support if you want it.</p></div></li>
+                    <li class="process-step reveal">
+                        <span class="step-num" aria-hidden="true">/01</span>
+                        <div class="step-body"><h3>Discovery Call</h3><p>We talk goals, scope, and fit. Book via the contact form or email.</p></div>
+                        <span class="step-time">/1 call/</span>
+                    </li>
+                    <li class="process-step reveal">
+                        <span class="step-num" aria-hidden="true">/02</span>
+                        <div class="step-body"><h3>Audit &amp; Proposal</h3><p>I review your current support, brand, and content setup, then send a clear plan with scope and timeline.</p></div>
+                        <span class="step-time">/3–5 days/</span>
+                    </li>
+                    <li class="process-step reveal">
+                        <span class="step-num" aria-hidden="true">/03</span>
+                        <div class="step-body"><h3>Build &amp; Iterate</h3><p>I execute with weekly check-ins and transparent reporting. You always know what's shipping.</p></div>
+                        <span class="step-time">/weekly check-ins/</span>
+                    </li>
+                    <li class="process-step reveal">
+                        <span class="step-num" aria-hidden="true">/04</span>
+                        <div class="step-body"><h3>Handover &amp; Support</h3><p>Documentation and SOPs so your team can run it, with ongoing support if you want it.</p></div>
+                        <span class="step-time">/full docs/</span>
+                    </li>
                 </ol>
+                <div class="stat-trio reveal">
+                    <div class="stat"><b>&lt;24h</b><span>max response time</span></div>
+                    <div class="stat"><b>5+</b><span>years of experience</span></div>
+                    <div class="stat"><b>100%</b><span>documented handovers</span></div>
+                </div>
             </div>
         </section>
 
-        <section class="experience">
+        <section class="experience band" id="experience">
             <div class="container">
-                <div class="running-head reveal"><span>№ 06</span><span>Experience</span><span class="rh-folio" aria-hidden="true">Contents</span></div>
-                <ul class="contents">
-                    <li class="xp-row reveal"><span class="xp-dates">Oct 2024 – Jul 2025</span><span class="xp-role">Customer Service Representative</span><span class="xp-org">CVS Pharmacy · Remote</span></li>
-                    <li class="xp-row reveal"><span class="xp-dates">Jan 2023 – Jun 2024</span><span class="xp-role">Healthcare Representative</span><span class="xp-org">Sagility Health · Remote</span></li>
-                    <li class="xp-row reveal"><span class="xp-dates">Nov 2022 – Dec 2023</span><span class="xp-role">Tutor &amp; Content Designer</span><span class="xp-org">Abiodun Foundation College</span></li>
-                    <li class="xp-row reveal"><span class="xp-dates">Feb 2019 – Sep 2022</span><span class="xp-role">Locum Pharmacist &amp; Operations Support</span><span class="xp-org">Lawleezy Healthcare Pharmacy</span></li>
-                    <li class="xp-row reveal"><span class="xp-dates">Jun 2021 – Dec 2021</span><span class="xp-role">Laboratory Attendant &amp; Data Analyst</span><span class="xp-org">Human Anatomy Dept., University of Ibadan</span></li>
+                <div class="section-head reveal">
+                    <p class="section-tag">{06} — Experience</p>
+                    <h2 class="section-title">Where I've worked</h2>
+                </div>
+                <ul class="xp-list">
+                    <li class="xp-row reveal"><span class="xp-dates">Oct 2024 – Jul 2025</span><div class="xp-body"><span class="xp-role">Customer Service Representative</span><span class="xp-org">CVS Pharmacy · Remote</span></div></li>
+                    <li class="xp-row reveal"><span class="xp-dates">Jan 2023 – Jun 2024</span><div class="xp-body"><span class="xp-role">Healthcare Representative</span><span class="xp-org">Sagility Health · Remote</span></div></li>
+                    <li class="xp-row reveal"><span class="xp-dates">Nov 2022 – Dec 2023</span><div class="xp-body"><span class="xp-role">Tutor &amp; Content Designer</span><span class="xp-org">Abiodun Foundation College</span></div></li>
+                    <li class="xp-row reveal"><span class="xp-dates">Feb 2019 – Sep 2022</span><div class="xp-body"><span class="xp-role">Locum Pharmacist &amp; Operations Support</span><span class="xp-org">Lawleezy Healthcare Pharmacy</span></div></li>
+                    <li class="xp-row reveal"><span class="xp-dates">Jun 2021 – Dec 2021</span><div class="xp-body"><span class="xp-role">Laboratory Attendant &amp; Data Analyst</span><span class="xp-org">Human Anatomy Dept., University of Ibadan</span></div></li>
                 </ul>
-                <!-- CERTIFICATIONS: client will supply entries (spec §10). Duplicate the block below when they arrive:
-                <div class="certs" style="margin-top:44px;">
-                    <p class="kicker">Certifications</p>
-                    <ul class="contents"><li class="xp-row"><span class="xp-dates">YEAR</span><span class="xp-role">Certificate name</span><span class="xp-org">Issuer</span></li></ul>
+                <div class="certs" style="margin-top:56px;">
+                    <p class="toolkit-label">Certifications</p>
+                    <ul class="xp-list">
+                        <li class="xp-row reveal"><span class="xp-dates">Jun 2026</span><div class="xp-body"><span class="xp-role">Certificate of Completion</span><span class="xp-org">TS Academy · Phoenix Cohort</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Dec 2025</span><div class="xp-body"><span class="xp-role">Data Analysis Course</span><span class="xp-org">Cirvee · American Council of Training and Development (ACTD)</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Nov 2024</span><div class="xp-body"><span class="xp-role">Soft Skills Training</span><span class="xp-org">Jobberman Nigeria · Mastercard Foundation Young Africa Works</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Jan 2024</span><div class="xp-body"><span class="xp-role">Certificate of National Service</span><span class="xp-org">National Youth Service Corps (NYSC)</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Sep 2022</span><div class="xp-body"><span class="xp-role">Outstanding Service to the University Community</span><span class="xp-org">Pro-Chancellor's Community Service Certificate · Lead City University</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Aug 2022</span><div class="xp-body"><span class="xp-role">Community Development Service (Vice President)</span><span class="xp-org">New Horizons Computer Learning Centers</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Jul 2021</span><div class="xp-body"><span class="xp-role">Microsoft Office Word, Excel &amp; PowerPoint 2016</span><span class="xp-org">New Horizons Computer Learning Centers</span></div></li>
+                        <li class="xp-row reveal"><span class="xp-dates">Apr 2021</span><div class="xp-body"><span class="xp-role">Professionalism in the Workplace</span><span class="xp-org">Liprorich Consulting Limited · Apex of Career</span></div></li>
+                    </ul>
                 </div>
-                -->
             </div>
         </section>
 
-        <section class="faq" id="faq">
+        <section class="testimonials band">
             <div class="container">
-                <div class="running-head reveal"><span>№ 07</span><span>FAQs</span><span class="rh-folio" aria-hidden="true">Interview</span></div>
-                <h2 class="section-title reveal" style="margin-bottom:clamp(24px,3vw,40px);">Questions, answered.</h2>
+                <div class="section-head reveal">
+                    <p class="section-tag">{07} — Testimonials</p>
+                    <h2 class="section-title">Don't take my word for it</h2>
+                    <p class="section-note">* Take theirs</p>
+                </div>
+            </div>
+            <!-- PLACEHOLDER TESTIMONIALS — swap with real quotes before wide sharing (spec §10) -->
+            <div class="quote-marquee">
+                <div class="ticker-track">
+                    <div class="ticker-set">
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"Oyindamola turned our support inbox from a fire drill into a system. Response times dropped and customers noticed."</p></blockquote><figcaption>Operations Lead, healthcare services</figcaption></figure>
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"The brand voice prompts she built write like our best copywriter on their best day."</p></blockquote><figcaption>Founder, e-commerce startup</figcaption></figure>
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"Clean, consistent design work delivered faster than agencies we'd paid triple for."</p></blockquote><figcaption>Marketing Manager, SaaS</figcaption></figure>
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"She documents everything. Handovers that used to take weeks now take a call."</p></blockquote><figcaption>CEO, creative agency</figcaption></figure>
+                    </div>
+                    <div class="ticker-set" aria-hidden="true">
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"Oyindamola turned our support inbox from a fire drill into a system. Response times dropped and customers noticed."</p></blockquote><figcaption>Operations Lead, healthcare services</figcaption></figure>
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"The brand voice prompts she built write like our best copywriter on their best day."</p></blockquote><figcaption>Founder, e-commerce startup</figcaption></figure>
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"Clean, consistent design work delivered faster than agencies we'd paid triple for."</p></blockquote><figcaption>Marketing Manager, SaaS</figcaption></figure>
+                        <figure class="quote-card"><div class="quote-rate"><b>5.0</b><span>/ 5</span></div><blockquote><p>"She documents everything. Handovers that used to take weeks now take a call."</p></blockquote><figcaption>CEO, creative agency</figcaption></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq band" id="faq">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-tag">{08} — FAQ</p>
+                    <h2 class="section-title">Got questions?</h2>
+                </div>
                 <div class="faq-grid">
-                    <details class="faq-item reveal"><summary>Do you work across time zones?</summary><p>Yes — fully remote, worldwide. I overlap comfortably with US and EU business hours and communicate async-first the rest of the time.</p></details>
-                    <details class="faq-item reveal"><summary>What are your core services?</summary><p>Customer service representation, AI brand management, and graphic design — backed by data analysis, executive assistance, social media management, and video editing.</p></details>
-                    <details class="faq-item reveal"><summary>What tools do you use daily?</summary><p>Zendesk and CRM platforms for support; Claude, ChatGPT, Jasper, and Midjourney for AI brand work; Canva and Photoshop for design; SQL, Power BI, and Excel for data; Notion, MS Teams, Buffer, and Later for operations.</p></details>
-                    <details class="faq-item reveal"><summary>How do we start working together?</summary><p>Four steps: a discovery call, an audit and proposal, build-and-iterate with weekly check-ins, then handover with full documentation. See the process section above.</p></details>
-                    <details class="faq-item reveal"><summary>Can I see samples of your work?</summary><p>Yes — the Selected Work gallery above shows samples by category, all viewable right here on the site. More available on request.</p></details>
-                    <details class="faq-item reveal"><summary>How quickly do you respond?</summary><p>Within 24 hours, usually much faster.</p></details>
-                    <details class="faq-item reveal"><summary>Which industries have you worked in?</summary><p>Healthcare and pharmacy retail, education, and tech and e-commerce startups.</p></details>
-                    <details class="faq-item reveal"><summary>Are you open to full-time roles?</summary><p>Yes — open to full-time remote roles as well as contract and project engagements.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">01/</span>Do you work across time zones?<span class="faq-x" aria-hidden="true"></span></summary><p>Yes, I work fully remote with clients worldwide. I overlap comfortably with US and EU business hours and communicate async-first the rest of the time.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">02/</span>What are your core services?<span class="faq-x" aria-hidden="true"></span></summary><p>Customer service representation, AI brand management, and graphic design, backed by data analysis, executive assistance, social media management, and video editing.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">03/</span>What tools do you use daily?<span class="faq-x" aria-hidden="true"></span></summary><p>Zendesk and CRM platforms for support; Claude, ChatGPT, Jasper, and Midjourney for AI brand work; Canva and Photoshop for design; SQL, Power BI, and Excel for data; Notion, MS Teams, Buffer, and Later for operations.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">04/</span>How do we start working together?<span class="faq-x" aria-hidden="true"></span></summary><p>Four steps: a discovery call, an audit and proposal, build-and-iterate with weekly check-ins, then handover with full documentation. See the process section above.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">05/</span>Can I see samples of your work?<span class="faq-x" aria-hidden="true"></span></summary><p>Yes. The Selected Work gallery above shows samples by category, all viewable right here on the site. More available on request.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">06/</span>How quickly do you respond?<span class="faq-x" aria-hidden="true"></span></summary><p>Within 24 hours, usually much faster.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">07/</span>Which industries have you worked in?<span class="faq-x" aria-hidden="true"></span></summary><p>Healthcare and pharmacy retail, education, and tech and e-commerce startups.</p></details>
+                    <details class="faq-item reveal"><summary><span class="faq-num">08/</span>Are you open to full-time roles?<span class="faq-x" aria-hidden="true"></span></summary><p>Yes, I'm open to full-time remote roles as well as contract and project engagements.</p></details>
                 </div>
             </div>
         </section>
 
-        <section class="big-cta">
-            <div class="container big-cta-inner reveal">
-                <h2>Not sure what you need? <em>Let's have a chat.</em></h2>
-                <p>Tell me where it hurts — support, brand, or design — and I'll tell you honestly what would help.</p>
-                <div class="big-cta-ctas">
-                    <a href="mailto:oyindamolaw8@gmail.com" class="stamp-btn">Book a Call</a>
-                    <a href="#contact" class="link-underline">Fill the Brief <span class="arr" aria-hidden="true">→</span></a>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
+        <section class="contact band-dark" id="contact">
             <div class="container contact-grid">
                 <div class="contact-info reveal">
-                    <div class="running-head reveal"><span>№ 08</span><span>Say Hello</span><span class="rh-folio" aria-hidden="true">Correspondence</span></div>
-                    <h2 class="section-title">Let's build systems <em>that perform.</em></h2>
-                    <p>Have a support, brand, or design challenge? Drop a message — I reply within 24 hours.</p>
+                    <p class="section-tag">{09} — Contact</p>
+                    <h2 class="section-title">Not sure what you need? Let's have a chat</h2>
+                    <p class="contact-lead">Tell me where it hurts: support, brand, or design. I'll tell you honestly what would help, and I reply within 24 hours.</p>
                     <ul class="contact-details">
                         <li><span>Email</span><a href="mailto:oyindamolaw8@gmail.com">oyindamolaw8@gmail.com</a></li>
                         <li><span>Phone</span><a href="tel:+2347041107313">+234 704 110 7313</a></li>
-                        <li><span>Availability</span>Remote — Worldwide</li>
+                        <li><span>Availability</span>Remote, worldwide</li>
                     </ul>
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-pill">Twitter/X <span class="arr" aria-hidden="true">↗</span></a>
+                        <a href="mailto:oyindamolaw8@gmail.com" class="social-pill">Email <span class="arr" aria-hidden="true">↗</span></a>
+                    </div>
                 </div>
                 <form id="contactForm" class="contact-form reveal" novalidate>
                     <div class="form-row">
@@ -319,7 +453,7 @@
                         <textarea id="contactMessage" name="message" class="field" rows="4" placeholder="Tell me about your goals..." required aria-describedby="messageError"></textarea>
                         <span class="error-msg" id="messageError" role="alert">Please share some details about your project.</span>
                     </div>
-                    <button type="submit" class="stamp-btn btn-submit" id="contactSubmitBtn">
+                    <button type="submit" class="btn btn-accent btn-submit" id="contactSubmitBtn">
                         <span class="btn-text">Send Message</span>
                         <span class="btn-wait">Sending…</span>
                     </button>
@@ -333,8 +467,8 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <p class="footer-title">Let's build something <em>worth caring about.</em></p>
-                <a href="mailto:oyindamolaw8@gmail.com" class="link-underline">oyindamolaw8@gmail.com</a>
+                <p class="footer-title">Let's build something worth caring about.</p>
+                <a href="mailto:oyindamolaw8@gmail.com" class="link-arrow">oyindamolaw8@gmail.com</a>
             </div>
             <nav class="footer-col" aria-label="Footer menu">
                 <h5>Menu</h5>
@@ -359,7 +493,7 @@
                 <ul>
                     <li><a href="mailto:oyindamolaw8@gmail.com">oyindamolaw8@gmail.com</a></li>
                     <li><a href="tel:+2347041107313">+234 704 110 7313</a></li>
-                    <li>Remote — Worldwide</li>
+                    <li>Remote, worldwide</li>
                 </ul>
                 <div class="footer-socials">
                     <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20.4h3.38zM5.25 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM20.44 13.28c0-3.3-1.76-4.83-4.1-4.83a3.54 3.54 0 0 0-3.21 1.77V8.5H9.75V20.4h3.38v-6.28c0-1.42.65-2.26 1.9-2.26 1.15 0 1.7.81 1.7 2.26v6.28h3.7z"/></svg></a>
@@ -371,11 +505,11 @@
         <div class="container footer-meta">
             <p>&copy; 2026 Oyindamola Kehinde Waheed. All rights reserved.</p>
             <a href="#" id="viewAuditLogsBtn">System Audit Log</a>
-            <a href="#hero" class="link-underline back-top">Back to Top
+            <a href="#hero" class="link-arrow back-top">Back to Top
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
             </a>
         </div>
-        <div class="footer-logotype" aria-hidden="true">DAMOLA<span class="logo-italic">kenny</span></div>
+        <div class="footer-logotype" aria-hidden="true"><span class="logo-mark">✱</span>damolakenny</div>
     </footer>
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Work sample preview" hidden>
         <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close preview"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
@@ -389,7 +523,7 @@
     <div class="modal" id="auditLogsModal" role="dialog" aria-modal="true" aria-label="System activity audit logs">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="display">System Activity Audit Logs</h3>
+                <h3>System Activity Audit Logs</h3>
                 <button class="close-modal" id="closeModalBtn" aria-label="Close audit log">&times;</button>
             </div>
             <div class="modal-body">
