@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyNav();
     initGallery();
     initLightbox();
+    initRates();
     initContactForm();
     initAuditModal();
     initReveal();
@@ -94,7 +95,8 @@ function initStickyNav() {
 
 /* --- Work gallery filters --- */
 function initGallery() {
-    const chips = document.querySelectorAll('.filter-chip');
+    // .filter-toggle, not .filter-chip — the latter is shared styling, also worn by the currency switch
+    const chips = document.querySelectorAll('.filter-toggle');
     const tiles = Array.from(document.querySelectorAll('.work-tile'));
     tiles.forEach(tile => {
         const img = tile.querySelector('img');
@@ -150,6 +152,16 @@ function initLightbox() {
             frame.setAttribute('allow', 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
             frame.setAttribute('allowfullscreen', '');
             media.appendChild(frame);
+        } else if (tile.dataset.src) {
+            const vid = document.createElement('video');
+            vid.className = 'lightbox-file';
+            vid.src = tile.dataset.src;
+            vid.controls = true;
+            vid.setAttribute('playsinline', '');
+            vid.addEventListener('error', () => {
+                if (vid.parentNode === media) media.replaceChild(makePlaceholder(), vid);
+            });
+            media.appendChild(vid);
         } else if (img) {
             const clone = img.cloneNode();
             clone.addEventListener('error', () => {
@@ -173,6 +185,7 @@ function initLightbox() {
 
     function close() {
         lightbox.hidden = true;
+        media.innerHTML = '';   // stop any playing video/iframe
         document.body.classList.remove('no-scroll');
         if (lastFocus) lastFocus.focus();
     }
@@ -196,6 +209,43 @@ function initLightbox() {
             if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
             else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
         }
+    });
+}
+
+/* --- Rate card: currency switch + package → contact scope --- */
+function initRates() {
+    const toggles = Array.from(document.querySelectorAll('.currency-toggle'));
+    if (!toggles.length) return;
+    const figures = Array.from(document.querySelectorAll('.rate-figure'));
+    const projectSelect = document.getElementById('contactProject');
+
+    function apply(currency, log) {
+        figures.forEach(fig => {
+            const next = fig.dataset[currency];
+            if (next) fig.textContent = next;
+        });
+        toggles.forEach(toggle => {
+            const on = toggle.dataset.currency === currency;
+            toggle.classList.toggle('active', on);
+            toggle.setAttribute('aria-pressed', String(on));
+        });
+        storageSet('portfolio-currency', currency);
+        if (log) logAuditEvent('Currency Switched', 'Rates displayed in: ' + currency.toUpperCase(), 'User', 'SUCCESS');
+    }
+
+    apply(storageGet('portfolio-currency') === 'ngn' ? 'ngn' : 'usd', false);
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => apply(toggle.dataset.currency, true));
+    });
+
+    document.querySelectorAll('.rate-cta').forEach(cta => {
+        cta.addEventListener('click', () => {
+            if (!projectSelect) return;
+            const scope = cta.dataset.scope;
+            if (!Array.from(projectSelect.options).some(opt => opt.value === scope)) return;
+            projectSelect.value = scope;
+            logAuditEvent('Package Selected', 'Contact scope preset to: ' + scope, 'User', 'SUCCESS');
+        });
     });
 }
 
