@@ -15,6 +15,8 @@ const types = {
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
   '.ico': 'image/x-icon',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
   '.pdf': 'application/pdf',
   '.json': 'application/json',
   '.txt': 'text/plain; charset=utf-8',
